@@ -49,6 +49,7 @@ protected:
     map<int, Vertex*> vertices;
     vector<Edge*> edges;
 
+public:
     virtual ~Graph();
 
     virtual void addVertex(Vertex* v);
@@ -64,7 +65,6 @@ protected:
     virtual void print() const;
     virtual void exportToDotGraph(const string& filename) const;
 
-public:
     template <typename Func>
     void forEachVertex(Func f) const {
         for (auto& p : vertices)
