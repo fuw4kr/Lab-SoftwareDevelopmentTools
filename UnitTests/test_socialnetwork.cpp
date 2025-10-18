@@ -16,6 +16,18 @@ TEST(SocialNetworkTest, AddAndGetUser) {
     EXPECT_EQ(network.getUser(999), nullptr); 
 }
 
+TEST(SocialNetworkTest, DuplicateUserId) {
+    SocialNetwork network;
+    auto u1 = new RegularUser(1, "Alice", "alice@mail.com");
+    auto u2 = new RegularUser(1, "Bob", "bob@mail.com"); 
+
+    network.addUser(u1);
+    network.addUser(u2); 
+
+    EXPECT_EQ(network.getUser(1), u1); 
+    EXPECT_EQ(network.getUser(1)->getName(), "Alice");
+}
+
 TEST(SocialNetworkTest, RemoveUser) {
     SocialNetwork network;
     auto u1 = new RegularUser(1, "Alice", "alice@mail.com");
