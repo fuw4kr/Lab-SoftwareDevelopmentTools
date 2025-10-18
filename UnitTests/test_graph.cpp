@@ -130,3 +130,66 @@ TEST(GraphTest, RemoveVertexWithEdges) {
     EXPECT_EQ(g.getAllVertices().size(), 1);
     EXPECT_EQ(g.getAllEdges().size(), 0); 
 }
+
+TEST(GraphTest, AddDuplicateVertex) {
+    Graph g;
+    auto v1 = new TestVertex(1);
+    auto v2 = new TestVertex(1);
+    g.addVertex(v1);
+    size_t before = g.getAllVertices().size();
+    g.addVertex(v2); 
+    EXPECT_EQ(g.getAllVertices().size(), before)
+        << "Graph should reject duplicate vertex IDs";
+}
+
+TEST(GraphTest, AddEdgeWithMissingEndpoints) {
+    Graph g;
+    auto v1 = new TestVertex(1);
+    g.addVertex(v1);
+
+    auto e1 = new TestEdge(1, 2); 
+    EXPECT_NO_THROW({
+        g.addEdge(e1);
+        });
+
+    EXPECT_EQ(g.getAllEdges().size(), 0);
+
+    auto e2 = new TestEdge(3, 4);
+    EXPECT_NO_THROW({
+        g.addEdge(e2);
+        });
+    EXPECT_EQ(g.getAllEdges().size(), 0);
+}
+
+TEST(GraphTest, GetNeighborsOfNonExistingVertex) {
+    Graph g;
+    EXPECT_TRUE(g.getNeighbors(999).empty())
+        << "getNeighbors for non-existing vertex should return empty vector";
+}
+
+TEST(GraphTest, ExportToDotEmptyGraph) {
+    Graph g;
+    EXPECT_NO_THROW({
+        g.exportToDotGraph("empty.dot");
+        });
+
+    ifstream file("empty.dot");
+    ASSERT_TRUE(file.is_open());
+    string content((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
+    EXPECT_NE(content.find("graph"), string::npos)
+        << "DOT file should contain 'graph' keyword even if graph is empty";
+    file.close();
+}
+
+TEST(GraphTest, DestructorCleanup) {
+    {
+        Graph g;
+        auto v1 = new TestVertex(1);
+        auto v2 = new TestVertex(2);
+        g.addVertex(v1);
+        g.addVertex(v2);
+        auto e1 = new TestEdge(1, 2);
+        g.addEdge(e1);
+    }
+    SUCCEED(); 
+}
