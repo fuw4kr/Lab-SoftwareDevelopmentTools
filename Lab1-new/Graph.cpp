@@ -57,20 +57,29 @@ void Graph::removeVertex(int id) {
 
 void Graph::removeEdge(int from, int to) {
     LOG_DEBUG("Attempting to remove edge from " + to_string(from) + " to " + to_string(to));
-    auto it = remove_if(edges.begin(), edges.end(), [from, to](Edge* e) {
-        if (e->getFrom() == from && e->getTo() == to) {
-            delete e;
+
+    auto removeEdgeLambda = [](vector<Edge*>& edges, int f, int t) {
+        auto it = remove_if(edges.begin(), edges.end(), [f, t](Edge* e) {
+            if (e->getFrom() == f && e->getTo() == t) {
+                delete e;
+                return true;
+            }
+            return false;
+            });
+        if (it != edges.end()) {
+            edges.erase(it, edges.end());
             return true;
         }
         return false;
-        });
-    if (it != edges.end()) {
-        edges.erase(it, edges.end());
-        LOG_INFO("Removed edge from " + to_string(from) + " to " + to_string(to));
-    }
-    else {
-        LOG_WARN("No edge found from " + to_string(from) + " to " + to_string(to));
-    }
+        };
+
+    bool removed1 = removeEdgeLambda(edges, from, to);
+    bool removed2 = removeEdgeLambda(edges, to, from); 
+
+    if (removed1 || removed2)
+        LOG_INFO("Removed edge between " + to_string(from) + " and " + to_string(to));
+    else
+        LOG_WARN("No edge found between " + to_string(from) + " and " + to_string(to));
 }
 
 Vertex* Graph::getVertex(int id) const {
