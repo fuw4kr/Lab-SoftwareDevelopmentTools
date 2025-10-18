@@ -10,8 +10,10 @@
 using namespace std;
 
 class SocialNetwork : public Graph, public GraphAlgorithms {
-public:
+private:
+    map<int, User*> users;
 
+public:
     void addUser(User* user);
     void removeUser(int userId);
     User* getUser(int userId) const;

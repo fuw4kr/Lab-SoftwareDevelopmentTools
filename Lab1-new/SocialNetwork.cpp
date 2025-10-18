@@ -12,6 +12,11 @@ void SocialNetwork::addUser(User* user) {
         LOG_ERROR("Attempted to add null user");
         return;
     }
+    if (users.find(user->getId()) != users.end()) {
+        LOG_WARN("User with ID " + std::to_string(user->getId()) + " already exists.");
+        return;
+    }
+    users[user->getId()] = user;
     addVertex(user);
     LOG_INFO("Added user ID=" + to_string(user->getId()) + " name=" + user->getName());
 }
