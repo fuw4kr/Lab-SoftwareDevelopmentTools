@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 
     bool runTests = false;
     for (int i = 1; i < argc; ++i) {
-        std::string arg = argv[i];
+        string arg = argv[i];
         if (arg == "--test") {
             runTests = true;
             break;

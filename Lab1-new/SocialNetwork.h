@@ -30,6 +30,8 @@ public:
     vector<User*> findCloseFriends(int userId);
     vector<User*> findUsersByLocation(const string& location);
     vector<User*> findCommonSubscriptions(int userA, int userB);
+    vector<Message*> getMessagesOfUser(int userId) const;
+    vector<Post*> getPostsOfUser(int userId) const;
 
     bool areConnected(int userA, int userB);
     int distanceBetween(int userA, int userB);
