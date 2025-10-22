@@ -10,8 +10,10 @@
 using namespace std;
 
 class SocialNetwork : public Graph, public GraphAlgorithms {
-public:
+private:
+    map<int, User*> users;
 
+public:
     void addUser(User* user);
     void removeUser(int userId);
     User* getUser(int userId) const;
@@ -28,6 +30,8 @@ public:
     vector<User*> findCloseFriends(int userId);
     vector<User*> findUsersByLocation(const string& location);
     vector<User*> findCommonSubscriptions(int userA, int userB);
+    vector<Message*> getMessagesOfUser(int userId) const;
+    vector<Post*> getPostsOfUser(int userId) const;
 
     bool areConnected(int userA, int userB);
     int distanceBetween(int userA, int userB);

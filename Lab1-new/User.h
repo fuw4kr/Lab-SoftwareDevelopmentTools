@@ -29,6 +29,9 @@ public:
     string getName() const { return name; }
     string getEmail() const { return email; }
     string getBio() const { return biography; }
+    string getPhone() const { return phone; }
+    string getBirthday() const { return birthday; }
+    string getGender() const { return gender; }
 
     virtual void print() const;
 };
@@ -53,6 +56,13 @@ public:
     virtual void receiveMessage();
     virtual void changeReputation(int delta);
 
+    int getReputation() const { return reputation; }
+    int getPostsCount() const { return postsCount; }
+    int getMessagesSent() const { return messagesSent; }
+    int getMessagesReceived() const { return messagesReceived; }
+    int getFollowers() const { return followers; }
+    int getFollowing() const { return following; }
+
     void updateLastLogin();
     time_t getLastLogin() const;
 
@@ -68,6 +78,10 @@ public:
     void addCheckmark(const string& checkmark);
     void spendPremiumPoints(int amount);
     void bonusReputation();
+
+
+    int getPremiumPoints() const { return premiumPoints; }
+    vector<string> getCheckmarks() const { return checkmark; }
 
     void print() const;
 };

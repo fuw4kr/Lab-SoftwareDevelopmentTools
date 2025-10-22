@@ -12,6 +12,11 @@ void SocialNetwork::addUser(User* user) {
         LOG_ERROR("Attempted to add null user");
         return;
     }
+    if (users.find(user->getId()) != users.end()) {
+        LOG_WARN("User with ID " + to_string(user->getId()) + " already exists.");
+        return;
+    }
+    users[user->getId()] = user;
     addVertex(user);
     LOG_INFO("Added user ID=" + to_string(user->getId()) + " name=" + user->getName());
 }
@@ -158,6 +163,53 @@ vector<User*> SocialNetwork::findCommonSubscriptions(int userA, int userB) {
     LOG_DEBUG("Common subscriptions found: " + to_string(res.size()));
     return res;
 }
+
+vector<Message*> SocialNetwork::getMessagesOfUser(int userId) const {
+    LOG_INFO("Retrieving messages of user ID=" + to_string(userId));
+
+    vector<Message*> messages;
+
+    if (!getUser(userId)) {
+        LOG_WARN("User not found: ID=" + to_string(userId));
+        return messages;
+    }
+
+    for (auto* e : getAllEdges()) {
+        if (auto* m = dynamic_cast<Message*>(e)) {
+            if (m->getFrom() == userId || m->getTo() == userId) {
+                messages.push_back(m);
+            }
+        }
+    }
+
+    LOG_DEBUG("Messages found for user ID=" + to_string(userId) +
+        ": " + to_string(messages.size()));
+    return messages;
+}
+
+vector<Post*> SocialNetwork::getPostsOfUser(int userId) const {
+    LOG_INFO("Retrieving posts of user ID=" + to_string(userId));
+
+    vector<Post*> posts;
+
+    if (!getUser(userId)) {
+        LOG_WARN("User not found: ID=" + to_string(userId));
+        return posts;
+    }
+
+    for (auto* e : getAllEdges()) {
+        if (auto* p = dynamic_cast<Post*>(e)) {
+            if (p->getFrom() == userId || p->getTo() == userId) {
+                posts.push_back(p);
+            }
+        }
+    }
+
+    LOG_DEBUG("Posts found for user ID=" + to_string(userId) +
+        ": " + to_string(posts.size()));
+    return posts;
+}
+
 
 bool SocialNetwork::areConnected(int userA, int userB) {
     LOG_INFO("Checking if users " + to_string(userA) + " and " + to_string(userB) + " are connected");
