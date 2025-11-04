@@ -5,6 +5,7 @@ var hierarchy =
       [ "Message", "classMessage.html", null ],
       [ "Post", "classPost.html", null ],
       [ "Subscription", "classSubscription.html", null ],
+      [ "TestEdge", "classTestEdge.html", null ],
       [ "TestEdge", "classTestEdge.html", null ]
     ] ],
     [ "Graph", "classGraph.html", [
@@ -18,6 +19,7 @@ var hierarchy =
       [ "SocialNetworkTest", "classSocialNetworkTest.html", null ]
     ] ],
     [ "Vertex", "classVertex.html", [
+      [ "TestVertex", "classTestVertex.html", null ],
       [ "TestVertex", "classTestVertex.html", null ],
       [ "User", "classUser.html", [
         [ "RegularUser", "classRegularUser.html", [

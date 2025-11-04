@@ -14,6 +14,8 @@ var classSocialNetwork =
     [ "findUsersByLocation", "classSocialNetwork.html#a937c542e3c23a153e4eddac0ee2233e2", null ],
     [ "generateRandomUsers", "classSocialNetwork.html#a336c51f8a2edab7ac8d9bcfc4e045725", null ],
     [ "getFriendsOfUser", "classSocialNetwork.html#a0ffa1e4b08c41da8179c06b114be8ca9", null ],
+    [ "getMessagesOfUser", "classSocialNetwork.html#a0cb6c530c8a47e7ffb2ffed523aa8e80", null ],
+    [ "getPostsOfUser", "classSocialNetwork.html#a99761f6ff27e1f0d16970e19088fbe2a", null ],
     [ "getUser", "classSocialNetwork.html#aed314e9227d49560184d7dead02286b1", null ],
     [ "printNetwork", "classSocialNetwork.html#a512550e21c4b0438393469f11b8ea00f", null ],
     [ "printStatistics", "classSocialNetwork.html#a051b40508ea554e147c1e28b697c29f5", null ],
@@ -22,5 +24,6 @@ var classSocialNetwork =
     [ "saveToTextFile", "classSocialNetwork.html#a035fa0ba5453ffb1e671b4270c978a93", null ],
     [ "sendMessage", "classSocialNetwork.html#ae59cf45fa92a6baba7f440e209b598f5", null ],
     [ "shortestPathsFrom", "classSocialNetwork.html#a23399736ef0acbea68b6935a39500f2c", null ],
-    [ "userCentrality", "classSocialNetwork.html#a3e67520f8daea55f7d646e640d6e0cab", null ]
+    [ "userCentrality", "classSocialNetwork.html#a3e67520f8daea55f7d646e640d6e0cab", null ],
+    [ "users", "classSocialNetwork.html#ae7f8f2c05f943f162a01ebccb27946b6", null ]
 ];

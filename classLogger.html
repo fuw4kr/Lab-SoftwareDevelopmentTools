@@ -112,7 +112,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c0ca770cdc91ca9fc3015286568e1ea" id="r_a8c0ca770cdc91ca9fc3015286568e1ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLogger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a8c0ca770cdc91ca9fc3015286568e1ea">operator=</a> (const <a class="el" href="classLogger.html">Logger</a> &amp;)=delete</td></tr>
 <tr class="memdesc:a8c0ca770cdc91ca9fc3015286568e1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator.  <br /></td></tr>
 <tr class="separator:a8c0ca770cdc91ca9fc3015286568e1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fab166141a1a0b7cbee9302e95c83e7" id="r_a6fab166141a1a0b7cbee9302e95c83e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a6fab166141a1a0b7cbee9302e95c83e7">init</a> (const string &amp;filename, <a class="el" href="Logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level=<a class="el" href="Logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>, bool console=true)</td></tr>
+<tr class="memitem:a6fab166141a1a0b7cbee9302e95c83e7" id="r_a6fab166141a1a0b7cbee9302e95c83e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a6fab166141a1a0b7cbee9302e95c83e7">init</a> (const string &amp;filename, <a class="el" href="Logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level=<a class="el" href="Logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>, bool console=<a class="el" href="Lab1-new_8cpp.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>)</td></tr>
 <tr class="memdesc:a6fab166141a1a0b7cbee9302e95c83e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the logger.  <br /></td></tr>
 <tr class="separator:a6fab166141a1a0b7cbee9302e95c83e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dbb809282232adfbe81a780077e587a" id="r_a9dbb809282232adfbe81a780077e587a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a9dbb809282232adfbe81a780077e587a">shutdown</a> ()</td></tr>
@@ -284,8 +284,17 @@ Private Attributes</h2></td></tr>
 
 <p>Retrieves the singleton instance of <a class="el" href="classLogger.html" title="Thread-safe singleton logger for file and console output.">Logger</a>. </p>
 <p>Returns a reference to the singleton <a class="el" href="classLogger.html" title="Thread-safe singleton logger for file and console output.">Logger</a> instance.</p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to <a class="el" href="classLogger.html" title="Thread-safe singleton logger for file and console output.">Logger</a> instance. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Lab1-new_8cpp-example.html#a1">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Lab1-new.cpp</a>, and <a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Logger_8h-example.html#a15">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Logger.h</a>.</dd>
+<p>Main function � entry point of the Social Network application.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to <a class="el" href="classLogger.html" title="Thread-safe singleton logger for file and console output.">Logger</a> instance.</dd></dl>
+<p>Initializes the logger, creates a <a class="el" href="classSocialNetwork.html" title="Represents a complete social network system.">SocialNetwork</a> instance, runs the menu interface, and performs clean shutdown.</p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status code (0 if the program terminated successfully). </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If logger initialization or shutdown fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Logger_8h-example.html#a15">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Logger.h</a>.</dd>
 </dl>
 
 </div>
@@ -312,7 +321,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>console</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>console</em> = <code><a class="el" href="Lab1-new_8cpp.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -335,7 +344,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Lab1-new_8cpp-example.html#a2">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Lab1-new.cpp</a>, and <a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Logger_8h-example.html#a16">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Logger.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Logger_8h-example.html#a16">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Logger.h</a>.</dd>
 </dl>
 
 </div>
@@ -553,7 +562,7 @@ Private Attributes</h2></td></tr>
 
 <p>Closes the log file and writes a termination message. </p>
 <p>Closes the log file and writes the shutdown message. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Lab1-new_8cpp-example.html#a7">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Lab1-new.cpp</a>, and <a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Logger_8h-example.html#a17">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Logger.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Logger_8h-example.html#a17">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Logger.h</a>.</dd>
 </dl>
 
 </div>
@@ -696,6 +705,7 @@ Private Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Lab1-new/<a class="el" href="Logger_8h_source.html">Logger.h</a></li>
+<li>Lab1-new/<a class="el" href="Lab1-new_8cpp.html">Lab1-new.cpp</a></li>
 <li>Lab1-new/<a class="el" href="Logger_8cpp.html">Logger.cpp</a></li>
 </ul>
 </div><!-- contents -->

@@ -5,7 +5,7 @@ var searchData=
   ['setbirthday_2',['setBirthday',['../classUser.html#a1fa309a1f889d9b089e63856c918dfe4',1,'User']]],
   ['setgender_3',['setGender',['../classUser.html#ae6f9afa96390f49632f0088cbfbe1408',1,'User']]],
   ['setphone_4',['setPhone',['../classUser.html#a85dbeb3d3c055fb77ffad857992f8f0f',1,'User']]],
-  ['setup_5',['SetUp',['../classSocialNetworkTest.html#a89aff32f61e0c78302f7c41a3f6e6feb',1,'SocialNetworkTest']]],
+  ['setup_5',['setup',['../test__socialnetwork_8cpp.html#a1c940667711e58433b086f2a94444e77',1,'SetUp():&#160;test_socialnetwork.cpp'],['../classSocialNetworkTest.html#a89aff32f61e0c78302f7c41a3f6e6feb',1,'SocialNetworkTest::SetUp()']]],
   ['shortestpathsfrom_6',['shortestPathsFrom',['../classSocialNetwork.html#a23399736ef0acbea68b6935a39500f2c',1,'SocialNetwork']]],
   ['shutdown_7',['shutdown',['../classLogger.html#a9dbb809282232adfbe81a780077e587a',1,'Logger']]],
   ['socialnetwork_8',['SocialNetwork',['../classSocialNetwork.html',1,'']]],
@@ -14,5 +14,6 @@ var searchData=
   ['socialnetworktest_11',['SocialNetworkTest',['../classSocialNetworkTest.html',1,'']]],
   ['spendpremiumpoints_12',['spendPremiumPoints',['../classPremiumUser.html#ac4e04e67e925fc743e380caefea28a84',1,'PremiumUser']]],
   ['static_13',['Static',['../classVertexBase.html#aecc2b45fa0d78dcb357a02b42beed2c2',1,'VertexBase']]],
-  ['subscription_14',['subscription',['../classSubscription.html',1,'Subscription'],['../classSubscription.html#a0d134956962fec484d3e2c577e3ba6af',1,'Subscription::Subscription()']]]
+  ['subscription_14',['subscription',['../classSubscription.html#a0d134956962fec484d3e2c577e3ba6af',1,'Subscription::Subscription()'],['../classSubscription.html',1,'Subscription']]],
+  ['succeed_15',['SUCCEED',['../test__graph_8cpp.html#ad64227486e78c98c997b98bb4b7483a9',1,'test_graph.cpp']]]
 ];

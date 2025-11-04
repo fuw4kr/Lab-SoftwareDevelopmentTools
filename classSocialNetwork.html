@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classSocialNetwork.html',''); initResi
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classSocialNetwork-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SocialNetwork Class Reference</div></div>
 </div><!--header-->
@@ -153,6 +154,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d25c544f91bb136c2117bda319c5ea1" id="r_a5d25c544f91bb136c2117bda319c5ea1"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classUser.html">User</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a5d25c544f91bb136c2117bda319c5ea1">findCommonSubscriptions</a> (int userA, int userB)</td></tr>
 <tr class="memdesc:a5d25c544f91bb136c2117bda319c5ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds users followed by both given users.  <br /></td></tr>
 <tr class="separator:a5d25c544f91bb136c2117bda319c5ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb6c530c8a47e7ffb2ffed523aa8e80" id="r_a0cb6c530c8a47e7ffb2ffed523aa8e80"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classMessage.html">Message</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a0cb6c530c8a47e7ffb2ffed523aa8e80">getMessagesOfUser</a> (int userId) const</td></tr>
+<tr class="memdesc:a0cb6c530c8a47e7ffb2ffed523aa8e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether two users are connected by any path in the network.  <br /></td></tr>
+<tr class="separator:a0cb6c530c8a47e7ffb2ffed523aa8e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99761f6ff27e1f0d16970e19088fbe2a" id="r_a99761f6ff27e1f0d16970e19088fbe2a"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPost.html">Post</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a99761f6ff27e1f0d16970e19088fbe2a">getPostsOfUser</a> (int userId) const</td></tr>
+<tr class="separator:a99761f6ff27e1f0d16970e19088fbe2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6143753822f095467ea76e16cb0420c" id="r_ad6143753822f095467ea76e16cb0420c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#ad6143753822f095467ea76e16cb0420c">areConnected</a> (int userA, int userB)</td></tr>
 <tr class="memdesc:ad6143753822f095467ea76e16cb0420c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether two users are connected by any path.  <br /></td></tr>
 <tr class="separator:ad6143753822f095467ea76e16cb0420c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,7 +166,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1c5c7c9b538417144f7a7101e85afbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the shortest distance between two users.  <br /></td></tr>
 <tr class="separator:a1c5c7c9b538417144f7a7101e85afbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23399736ef0acbea68b6935a39500f2c" id="r_a23399736ef0acbea68b6935a39500f2c"><td class="memItemLeft" align="right" valign="top">map&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a23399736ef0acbea68b6935a39500f2c">shortestPathsFrom</a> (int startId)</td></tr>
-<tr class="memdesc:a23399736ef0acbea68b6935a39500f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes shortest paths from a starting user using Dijkstra’s algorithm.  <br /></td></tr>
+<tr class="memdesc:a23399736ef0acbea68b6935a39500f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes shortest paths from a starting user using Dijkstraï¿½s algorithm.  <br /></td></tr>
 <tr class="separator:a23399736ef0acbea68b6935a39500f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e67520f8daea55f7d646e640d6e0cab" id="r_a3e67520f8daea55f7d646e640d6e0cab"><td class="memItemLeft" align="right" valign="top">map&lt; int, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a3e67520f8daea55f7d646e640d6e0cab">userCentrality</a> ()</td></tr>
 <tr class="memdesc:a3e67520f8daea55f7d646e640d6e0cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates degree centrality for each user in the network.  <br /></td></tr>
@@ -181,6 +187,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a051b40508ea554e147c1e28b697c29f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays statistical information about the network.  <br /></td></tr>
 <tr class="separator:a051b40508ea554e147c1e28b697c29f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGraph"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGraph')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGraph.html">Graph</a></td></tr>
+<tr class="memitem:a902c5b3eacb66d60752525ab23297a95 inherit pub_methods_classGraph" id="r_a902c5b3eacb66d60752525ab23297a95"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">~Graph</a> ()</td></tr>
+<tr class="memdesc:a902c5b3eacb66d60752525ab23297a95 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classGraph.html" title="Class representing a directed or undirected graph.">Graph</a> destructor that releases memory.  <br /></td></tr>
+<tr class="separator:a902c5b3eacb66d60752525ab23297a95 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95e129c42fe7150ee07d13377547324 inherit pub_methods_classGraph" id="r_aa95e129c42fe7150ee07d13377547324"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aa95e129c42fe7150ee07d13377547324">addVertex</a> (<a class="el" href="classVertex.html">Vertex</a> *v)</td></tr>
+<tr class="memdesc:aa95e129c42fe7150ee07d13377547324 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a vertex to the graph.  <br /></td></tr>
+<tr class="separator:aa95e129c42fe7150ee07d13377547324 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081da710f7aaefdf1549fee3d3c41339 inherit pub_methods_classGraph" id="r_a081da710f7aaefdf1549fee3d3c41339"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a081da710f7aaefdf1549fee3d3c41339">addEdge</a> (<a class="el" href="classEdge.html">Edge</a> *e)</td></tr>
+<tr class="memdesc:a081da710f7aaefdf1549fee3d3c41339 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge to the graph.  <br /></td></tr>
+<tr class="separator:a081da710f7aaefdf1549fee3d3c41339 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80b9cf957617232c2bb41c485ad10c4 inherit pub_methods_classGraph" id="r_af80b9cf957617232c2bb41c485ad10c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#af80b9cf957617232c2bb41c485ad10c4">removeVertex</a> (int id)</td></tr>
+<tr class="memdesc:af80b9cf957617232c2bb41c485ad10c4 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a vertex from the graph.  <br /></td></tr>
+<tr class="separator:af80b9cf957617232c2bb41c485ad10c4 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a12e92fa19cf9de4164890929e3da8 inherit pub_methods_classGraph" id="r_aa2a12e92fa19cf9de4164890929e3da8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aa2a12e92fa19cf9de4164890929e3da8">removeEdge</a> (int from, int to)</td></tr>
+<tr class="memdesc:aa2a12e92fa19cf9de4164890929e3da8 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an edge between two vertices.  <br /></td></tr>
+<tr class="separator:aa2a12e92fa19cf9de4164890929e3da8 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba731af6ab617206179d44e9eef1c880 inherit pub_methods_classGraph" id="r_aba731af6ab617206179d44e9eef1c880"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classVertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aba731af6ab617206179d44e9eef1c880">getVertex</a> (int id) const</td></tr>
+<tr class="memdesc:aba731af6ab617206179d44e9eef1c880 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a vertex by ID.  <br /></td></tr>
+<tr class="separator:aba731af6ab617206179d44e9eef1c880 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85180d73a119ba2a3a15533c04a7626c inherit pub_methods_classGraph" id="r_a85180d73a119ba2a3a15533c04a7626c"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a85180d73a119ba2a3a15533c04a7626c">getNeighbors</a> (int id) const</td></tr>
+<tr class="memdesc:a85180d73a119ba2a3a15533c04a7626c inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of neighboring vertex IDs.  <br /></td></tr>
+<tr class="separator:a85180d73a119ba2a3a15533c04a7626c inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4309400e321b4cbe98c29de4b711f0 inherit pub_methods_classGraph" id="r_a0d4309400e321b4cbe98c29de4b711f0"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="classVertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a0d4309400e321b4cbe98c29de4b711f0">getAllVertices</a> () const</td></tr>
+<tr class="memdesc:a0d4309400e321b4cbe98c29de4b711f0 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all vertices of the graph.  <br /></td></tr>
+<tr class="separator:a0d4309400e321b4cbe98c29de4b711f0 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77fe3f8da39a402ebaa7d148cd8a879f inherit pub_methods_classGraph" id="r_a77fe3f8da39a402ebaa7d148cd8a879f"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="classEdge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a77fe3f8da39a402ebaa7d148cd8a879f">getAllEdges</a> () const</td></tr>
+<tr class="memdesc:a77fe3f8da39a402ebaa7d148cd8a879f inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all edges of the graph.  <br /></td></tr>
+<tr class="separator:a77fe3f8da39a402ebaa7d148cd8a879f inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeede3cb48be5d8cac08ea05ce54bd52 inherit pub_methods_classGraph" id="r_aeeede3cb48be5d8cac08ea05ce54bd52"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aeeede3cb48be5d8cac08ea05ce54bd52">print</a> () const</td></tr>
+<tr class="memdesc:aeeede3cb48be5d8cac08ea05ce54bd52 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the graph to the console.  <br /></td></tr>
+<tr class="separator:aeeede3cb48be5d8cac08ea05ce54bd52 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8bfbf6c26f136215178df50464d8e3 inherit pub_methods_classGraph" id="r_a4d8bfbf6c26f136215178df50464d8e3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a4d8bfbf6c26f136215178df50464d8e3">exportToDotGraph</a> (const string &amp;filename) const</td></tr>
+<tr class="memdesc:a4d8bfbf6c26f136215178df50464d8e3 inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the graph to DOT format (for Graphviz).  <br /></td></tr>
+<tr class="separator:a4d8bfbf6c26f136215178df50464d8e3 inherit pub_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa856134142ed2782cb50478fa04970ae inherit pub_methods_classGraph" id="r_aa856134142ed2782cb50478fa04970ae"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; </td></tr>
 <tr class="memitem:aa856134142ed2782cb50478fa04970ae inherit pub_methods_classGraph"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#aa856134142ed2782cb50478fa04970ae">forEachVertex</a> (Func f) const</td></tr>
 <tr class="memdesc:aa856134142ed2782cb50478fa04970ae inherit pub_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a function for each vertex in the graph.  <br /></td></tr>
@@ -240,46 +279,17 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a336c51f8a2edab7ac8d9bcfc4e045725" id="r_a336c51f8a2edab7ac8d9bcfc4e045725"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a336c51f8a2edab7ac8d9bcfc4e045725">generateRandomUsers</a> (<a class="el" href="classSocialNetwork.html">SocialNetwork</a> &amp;network, int n, bool withRelations=true)</td></tr>
+<tr class="memitem:a336c51f8a2edab7ac8d9bcfc4e045725" id="r_a336c51f8a2edab7ac8d9bcfc4e045725"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#a336c51f8a2edab7ac8d9bcfc4e045725">generateRandomUsers</a> (<a class="el" href="classSocialNetwork.html">SocialNetwork</a> &amp;<a class="el" href="test__socialnetwork_8cpp.html#a9b026067beaf82648575beb874650d2c">network</a>, int n, bool withRelations=<a class="el" href="Lab1-new_8cpp.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>)</td></tr>
 <tr class="memdesc:a336c51f8a2edab7ac8d9bcfc4e045725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random set of users and optionally their relations.  <br /></td></tr>
 <tr class="separator:a336c51f8a2edab7ac8d9bcfc4e045725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae7f8f2c05f943f162a01ebccb27946b6" id="r_ae7f8f2c05f943f162a01ebccb27946b6"><td class="memItemLeft" align="right" valign="top">map&lt; int, <a class="el" href="classUser.html">User</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocialNetwork.html#ae7f8f2c05f943f162a01ebccb27946b6">users</a></td></tr>
+<tr class="separator:ae7f8f2c05f943f162a01ebccb27946b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classGraph"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classGraph')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classGraph.html">Graph</a></td></tr>
-<tr class="memitem:a902c5b3eacb66d60752525ab23297a95 inherit pro_methods_classGraph" id="r_a902c5b3eacb66d60752525ab23297a95"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">~Graph</a> ()</td></tr>
-<tr class="memdesc:a902c5b3eacb66d60752525ab23297a95 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classGraph.html" title="Class representing a directed or undirected graph.">Graph</a> destructor that releases memory.  <br /></td></tr>
-<tr class="separator:a902c5b3eacb66d60752525ab23297a95 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa95e129c42fe7150ee07d13377547324 inherit pro_methods_classGraph" id="r_aa95e129c42fe7150ee07d13377547324"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aa95e129c42fe7150ee07d13377547324">addVertex</a> (<a class="el" href="classVertex.html">Vertex</a> *v)</td></tr>
-<tr class="memdesc:aa95e129c42fe7150ee07d13377547324 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a vertex to the graph.  <br /></td></tr>
-<tr class="separator:aa95e129c42fe7150ee07d13377547324 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a081da710f7aaefdf1549fee3d3c41339 inherit pro_methods_classGraph" id="r_a081da710f7aaefdf1549fee3d3c41339"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a081da710f7aaefdf1549fee3d3c41339">addEdge</a> (<a class="el" href="classEdge.html">Edge</a> *e)</td></tr>
-<tr class="memdesc:a081da710f7aaefdf1549fee3d3c41339 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge to the graph.  <br /></td></tr>
-<tr class="separator:a081da710f7aaefdf1549fee3d3c41339 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af80b9cf957617232c2bb41c485ad10c4 inherit pro_methods_classGraph" id="r_af80b9cf957617232c2bb41c485ad10c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#af80b9cf957617232c2bb41c485ad10c4">removeVertex</a> (int id)</td></tr>
-<tr class="memdesc:af80b9cf957617232c2bb41c485ad10c4 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a vertex from the graph.  <br /></td></tr>
-<tr class="separator:af80b9cf957617232c2bb41c485ad10c4 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2a12e92fa19cf9de4164890929e3da8 inherit pro_methods_classGraph" id="r_aa2a12e92fa19cf9de4164890929e3da8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aa2a12e92fa19cf9de4164890929e3da8">removeEdge</a> (int from, int to)</td></tr>
-<tr class="memdesc:aa2a12e92fa19cf9de4164890929e3da8 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an edge between two vertices.  <br /></td></tr>
-<tr class="separator:aa2a12e92fa19cf9de4164890929e3da8 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba731af6ab617206179d44e9eef1c880 inherit pro_methods_classGraph" id="r_aba731af6ab617206179d44e9eef1c880"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classVertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aba731af6ab617206179d44e9eef1c880">getVertex</a> (int id) const</td></tr>
-<tr class="memdesc:aba731af6ab617206179d44e9eef1c880 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a vertex by ID.  <br /></td></tr>
-<tr class="separator:aba731af6ab617206179d44e9eef1c880 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85180d73a119ba2a3a15533c04a7626c inherit pro_methods_classGraph" id="r_a85180d73a119ba2a3a15533c04a7626c"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a85180d73a119ba2a3a15533c04a7626c">getNeighbors</a> (int id) const</td></tr>
-<tr class="memdesc:a85180d73a119ba2a3a15533c04a7626c inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of neighboring vertex IDs.  <br /></td></tr>
-<tr class="separator:a85180d73a119ba2a3a15533c04a7626c inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d4309400e321b4cbe98c29de4b711f0 inherit pro_methods_classGraph" id="r_a0d4309400e321b4cbe98c29de4b711f0"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="classVertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a0d4309400e321b4cbe98c29de4b711f0">getAllVertices</a> () const</td></tr>
-<tr class="memdesc:a0d4309400e321b4cbe98c29de4b711f0 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all vertices of the graph.  <br /></td></tr>
-<tr class="separator:a0d4309400e321b4cbe98c29de4b711f0 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77fe3f8da39a402ebaa7d148cd8a879f inherit pro_methods_classGraph" id="r_a77fe3f8da39a402ebaa7d148cd8a879f"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="classEdge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a77fe3f8da39a402ebaa7d148cd8a879f">getAllEdges</a> () const</td></tr>
-<tr class="memdesc:a77fe3f8da39a402ebaa7d148cd8a879f inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all edges of the graph.  <br /></td></tr>
-<tr class="separator:a77fe3f8da39a402ebaa7d148cd8a879f inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeede3cb48be5d8cac08ea05ce54bd52 inherit pro_methods_classGraph" id="r_aeeede3cb48be5d8cac08ea05ce54bd52"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aeeede3cb48be5d8cac08ea05ce54bd52">print</a> () const</td></tr>
-<tr class="memdesc:aeeede3cb48be5d8cac08ea05ce54bd52 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the graph to the console.  <br /></td></tr>
-<tr class="separator:aeeede3cb48be5d8cac08ea05ce54bd52 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d8bfbf6c26f136215178df50464d8e3 inherit pro_methods_classGraph" id="r_a4d8bfbf6c26f136215178df50464d8e3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a4d8bfbf6c26f136215178df50464d8e3">exportToDotGraph</a> (const string &amp;filename) const</td></tr>
-<tr class="memdesc:a4d8bfbf6c26f136215178df50464d8e3 inherit pro_methods_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the graph to DOT format (for Graphviz).  <br /></td></tr>
-<tr class="separator:a4d8bfbf6c26f136215178df50464d8e3 inherit pro_methods_classGraph"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classGraph"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classGraph')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classGraph.html">Graph</a></td></tr>
 <tr class="memitem:ab02dee66988d6119f79c81fb932fe794 inherit pro_attribs_classGraph" id="r_ab02dee66988d6119f79c81fb932fe794"><td class="memItemLeft" align="right" valign="top">map&lt; int, <a class="el" href="classVertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ab02dee66988d6119f79c81fb932fe794">vertices</a></td></tr>
 <tr class="memdesc:ab02dee66988d6119f79c81fb932fe794 inherit pro_attribs_classGraph"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of all vertices.  <br /></td></tr>
@@ -295,7 +305,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a complete social network system. </p>
 <p>Extends the functionality of <a class="el" href="classGraph.html" title="Class representing a directed or undirected graph.">Graph</a> and <a class="el" href="classGraphAlgorithms.html" title="Provides various algorithms for graph traversal and analysis.">GraphAlgorithms</a> to include user management, relationships, content, and analysis. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Lab1-new_8cpp-example.html#_a5">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Lab1-new.cpp</a>, and <a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Menu_8h-example.html#_a1">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Menu.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Menu_8h-example.html#_a1">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Menu.h</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8e5e64370913c541bb0156fd4952e7cc" name="a8e5e64370913c541bb0156fd4952e7cc"></a>
@@ -469,19 +479,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks whether two users are connected by any path. </p>
-<p>Checks whether two users are connected by any path in the network.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userA</td><td>Source user ID. </td></tr>
     <tr><td class="paramname">userB</td><td>Target user ID. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if connected, otherwise false.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userA</td><td>First user's ID. </td></tr>
-    <tr><td class="paramname">userB</td><td>Second user's ID. </td></tr>
   </table>
   </dd>
 </dl>
@@ -763,7 +764,7 @@ Vector of triangles (groups of three user IDs). </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>withRelations</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>withRelations</em> = <code><a class="el" href="Lab1-new_8cpp.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -822,6 +823,52 @@ Vector of triangles (groups of three user IDs). </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of <a class="el" href="classUser.html" title="Represents a generic user in the social network.">User</a> pointers representing friends. </dd></dl>
+
+</div>
+</div>
+<a id="a0cb6c530c8a47e7ffb2ffed523aa8e80" name="a0cb6c530c8a47e7ffb2ffed523aa8e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb6c530c8a47e7ffb2ffed523aa8e80">&#9670;&#160;</a></span>getMessagesOfUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classMessage.html">Message</a> * &gt; SocialNetwork::getMessagesOfUser </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userId</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether two users are connected by any path in the network. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userA</td><td>First user's ID. </td></tr>
+    <tr><td class="paramname">userB</td><td>Second user's ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if connected, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a99761f6ff27e1f0d16970e19088fbe2a" name="a99761f6ff27e1f0d16970e19088fbe2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99761f6ff27e1f0d16970e19088fbe2a">&#9670;&#160;</a></span>getPostsOfUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classPost.html">Post</a> * &gt; SocialNetwork::getPostsOfUser </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userId</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1052,7 +1099,7 @@ Vector of triangles (groups of three user IDs). </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Computes shortest paths from a starting user using Dijkstra’s algorithm. </p>
+<p>Computes shortest paths from a starting user using Dijkstraï¿½s algorithm. </p>
 <p>Computes the shortest paths from a given user.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1091,6 +1138,29 @@ Vector of triangles (groups of three user IDs). </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Map of user IDs to their centrality scores.</dd>
 <dd>
 Map of user IDs and centrality scores. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae7f8f2c05f943f162a01ebccb27946b6" name="ae7f8f2c05f943f162a01ebccb27946b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f8f2c05f943f162a01ebccb27946b6">&#9670;&#160;</a></span>users</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;int, <a class="el" href="classUser.html">User</a>*&gt; SocialNetwork::users</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

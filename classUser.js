@@ -2,9 +2,12 @@ var classUser =
 [
     [ "User", "classUser.html#adf2b6cbd8897f2cd04a8ae6f39e69a4a", null ],
     [ "getBio", "classUser.html#ae6830ad1c0e5f612def4b888d14b5f33", null ],
+    [ "getBirthday", "classUser.html#a82d4e2b2eb127839b828daf4b5d3466c", null ],
     [ "getEmail", "classUser.html#a4c647e583bd964f40f687776a0d185dc", null ],
+    [ "getGender", "classUser.html#a070cd46011fd85d8c18451fdaf5ced25", null ],
     [ "getLocation", "classUser.html#a1d42d64b34dfe1ce53e47801fa1fd7b5", null ],
     [ "getName", "classUser.html#ab9b2b5feb6bdd1582696eb6d44cee384", null ],
+    [ "getPhone", "classUser.html#a49924b5f969db4f09d86beafcc15f3ec", null ],
     [ "print", "classUser.html#a7bb2e966d454a6d6d9a6d2bc475fb850", null ],
     [ "setBirthday", "classUser.html#a1fa309a1f889d9b089e63856c918dfe4", null ],
     [ "setGender", "classUser.html#ae6f9afa96390f49632f0088cbfbe1408", null ],

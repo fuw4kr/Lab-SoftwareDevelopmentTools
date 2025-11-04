@@ -91,7 +91,6 @@ $(document).ready(function(){initNavTree('classGraph.html',''); initResizable();
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classGraph-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Graph Class Reference</div></div>
@@ -114,37 +113,6 @@ Inheritance diagram for Graph:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa856134142ed2782cb50478fa04970ae" id="r_aa856134142ed2782cb50478fa04970ae"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; </td></tr>
-<tr class="memitem:aa856134142ed2782cb50478fa04970ae"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#aa856134142ed2782cb50478fa04970ae">forEachVertex</a> (Func f) const</td></tr>
-<tr class="memdesc:aa856134142ed2782cb50478fa04970ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a function for each vertex in the graph.  <br /></td></tr>
-<tr class="separator:aa856134142ed2782cb50478fa04970ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f9a38baff7440fe7af57dbe93411e16" id="r_a7f9a38baff7440fe7af57dbe93411e16"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; </td></tr>
-<tr class="memitem:a7f9a38baff7440fe7af57dbe93411e16"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a7f9a38baff7440fe7af57dbe93411e16">forEachEdge</a> (Func f) const</td></tr>
-<tr class="memdesc:a7f9a38baff7440fe7af57dbe93411e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a function for each edge in the graph.  <br /></td></tr>
-<tr class="separator:a7f9a38baff7440fe7af57dbe93411e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afecebc275e35e93c277ef31b8e0a4dc4" id="r_afecebc275e35e93c277ef31b8e0a4dc4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afecebc275e35e93c277ef31b8e0a4dc4"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#afecebc275e35e93c277ef31b8e0a4dc4">getVerticesOfType</a> () const</td></tr>
-<tr class="memdesc:afecebc275e35e93c277ef31b8e0a4dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all vertices of a specific type.  <br /></td></tr>
-<tr class="separator:afecebc275e35e93c277ef31b8e0a4dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6177e162a96996089dc8ddcb6edf6f6d" id="r_a6177e162a96996089dc8ddcb6edf6f6d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6177e162a96996089dc8ddcb6edf6f6d"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a6177e162a96996089dc8ddcb6edf6f6d">getEdgesOfType</a> () const</td></tr>
-<tr class="memdesc:a6177e162a96996089dc8ddcb6edf6f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all edges of a specific type.  <br /></td></tr>
-<tr class="separator:a6177e162a96996089dc8ddcb6edf6f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca1ebb6d8fd6b3111ab55784222b577" id="r_a2ca1ebb6d8fd6b3111ab55784222b577"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2ca1ebb6d8fd6b3111ab55784222b577"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a2ca1ebb6d8fd6b3111ab55784222b577">printAll</a> (const vector&lt; T * &gt; &amp;items) const</td></tr>
-<tr class="memdesc:a2ca1ebb6d8fd6b3111ab55784222b577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all provided items to the console.  <br /></td></tr>
-<tr class="separator:a2ca1ebb6d8fd6b3111ab55784222b577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a381c054cadd8120ba1cd66c6cc281b25" id="r_a381c054cadd8120ba1cd66c6cc281b25"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a381c054cadd8120ba1cd66c6cc281b25"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a381c054cadd8120ba1cd66c6cc281b25">countType</a> (const vector&lt; <a class="el" href="classEdge.html">Edge</a> * &gt; &amp;allEdges) const</td></tr>
-<tr class="memdesc:a381c054cadd8120ba1cd66c6cc281b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of edges of a given type.  <br /></td></tr>
-<tr class="separator:a381c054cadd8120ba1cd66c6cc281b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbf83cebd882cd663972ec9cf38a3ad" id="r_acdbf83cebd882cd663972ec9cf38a3ad"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:acdbf83cebd882cd663972ec9cf38a3ad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#acdbf83cebd882cd663972ec9cf38a3ad">removeConnectionType</a> (const vector&lt; <a class="el" href="classEdge.html">Edge</a> * &gt; &amp;allEdges, int from, int to)</td></tr>
-<tr class="memdesc:acdbf83cebd882cd663972ec9cf38a3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes edges of a certain type between two vertices.  <br /></td></tr>
-<tr class="separator:acdbf83cebd882cd663972ec9cf38a3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
 <tr class="memitem:a902c5b3eacb66d60752525ab23297a95" id="r_a902c5b3eacb66d60752525ab23297a95"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">~Graph</a> ()</td></tr>
 <tr class="memdesc:a902c5b3eacb66d60752525ab23297a95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classGraph.html" title="Class representing a directed or undirected graph.">Graph</a> destructor that releases memory.  <br /></td></tr>
 <tr class="separator:a902c5b3eacb66d60752525ab23297a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,6 +146,34 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4d8bfbf6c26f136215178df50464d8e3" id="r_a4d8bfbf6c26f136215178df50464d8e3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a4d8bfbf6c26f136215178df50464d8e3">exportToDotGraph</a> (const string &amp;filename) const</td></tr>
 <tr class="memdesc:a4d8bfbf6c26f136215178df50464d8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the graph to DOT format (for Graphviz).  <br /></td></tr>
 <tr class="separator:a4d8bfbf6c26f136215178df50464d8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa856134142ed2782cb50478fa04970ae" id="r_aa856134142ed2782cb50478fa04970ae"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; </td></tr>
+<tr class="memitem:aa856134142ed2782cb50478fa04970ae"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#aa856134142ed2782cb50478fa04970ae">forEachVertex</a> (Func f) const</td></tr>
+<tr class="memdesc:aa856134142ed2782cb50478fa04970ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a function for each vertex in the graph.  <br /></td></tr>
+<tr class="separator:aa856134142ed2782cb50478fa04970ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9a38baff7440fe7af57dbe93411e16" id="r_a7f9a38baff7440fe7af57dbe93411e16"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; </td></tr>
+<tr class="memitem:a7f9a38baff7440fe7af57dbe93411e16"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a7f9a38baff7440fe7af57dbe93411e16">forEachEdge</a> (Func f) const</td></tr>
+<tr class="memdesc:a7f9a38baff7440fe7af57dbe93411e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a function for each edge in the graph.  <br /></td></tr>
+<tr class="separator:a7f9a38baff7440fe7af57dbe93411e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecebc275e35e93c277ef31b8e0a4dc4" id="r_afecebc275e35e93c277ef31b8e0a4dc4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afecebc275e35e93c277ef31b8e0a4dc4"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#afecebc275e35e93c277ef31b8e0a4dc4">getVerticesOfType</a> () const</td></tr>
+<tr class="memdesc:afecebc275e35e93c277ef31b8e0a4dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all vertices of a specific type.  <br /></td></tr>
+<tr class="separator:afecebc275e35e93c277ef31b8e0a4dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6177e162a96996089dc8ddcb6edf6f6d" id="r_a6177e162a96996089dc8ddcb6edf6f6d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6177e162a96996089dc8ddcb6edf6f6d"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a6177e162a96996089dc8ddcb6edf6f6d">getEdgesOfType</a> () const</td></tr>
+<tr class="memdesc:a6177e162a96996089dc8ddcb6edf6f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all edges of a specific type.  <br /></td></tr>
+<tr class="separator:a6177e162a96996089dc8ddcb6edf6f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca1ebb6d8fd6b3111ab55784222b577" id="r_a2ca1ebb6d8fd6b3111ab55784222b577"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2ca1ebb6d8fd6b3111ab55784222b577"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a2ca1ebb6d8fd6b3111ab55784222b577">printAll</a> (const vector&lt; T * &gt; &amp;items) const</td></tr>
+<tr class="memdesc:a2ca1ebb6d8fd6b3111ab55784222b577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all provided items to the console.  <br /></td></tr>
+<tr class="separator:a2ca1ebb6d8fd6b3111ab55784222b577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381c054cadd8120ba1cd66c6cc281b25" id="r_a381c054cadd8120ba1cd66c6cc281b25"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a381c054cadd8120ba1cd66c6cc281b25"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#a381c054cadd8120ba1cd66c6cc281b25">countType</a> (const vector&lt; <a class="el" href="classEdge.html">Edge</a> * &gt; &amp;allEdges) const</td></tr>
+<tr class="memdesc:a381c054cadd8120ba1cd66c6cc281b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of edges of a given type.  <br /></td></tr>
+<tr class="separator:a381c054cadd8120ba1cd66c6cc281b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbf83cebd882cd663972ec9cf38a3ad" id="r_acdbf83cebd882cd663972ec9cf38a3ad"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:acdbf83cebd882cd663972ec9cf38a3ad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGraph.html#acdbf83cebd882cd663972ec9cf38a3ad">removeConnectionType</a> (const vector&lt; <a class="el" href="classEdge.html">Edge</a> * &gt; &amp;allEdges, int from, int to)</td></tr>
+<tr class="memdesc:acdbf83cebd882cd663972ec9cf38a3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes edges of a certain type between two vertices.  <br /></td></tr>
+<tr class="separator:acdbf83cebd882cd663972ec9cf38a3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -212,7 +208,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -244,7 +240,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -281,7 +277,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -339,7 +335,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of edges of type T. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a35">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a36">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
 </dl>
 
 </div>
@@ -363,7 +359,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -493,7 +489,7 @@ template&lt;typename Func &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -524,7 +520,7 @@ template&lt;typename Func &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -570,7 +566,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of edges of type T. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a33">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a34">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
 </dl>
 
 </div>
@@ -594,7 +590,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -632,7 +628,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -707,7 +703,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -758,7 +754,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a34">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a35">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
 </dl>
 
 </div>
@@ -820,7 +816,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a36">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2Lab-SoftwareDevelopmentTools_2Lab-SoftwareDevelopmentTools_2Lab1-new_2Graph_8h-example.html#a37">/home/runner/work/Lab-SoftwareDevelopmentTools/Lab-SoftwareDevelopmentTools/Lab1-new/Graph.h</a>.</dd>
 </dl>
 
 </div>
@@ -854,7 +850,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -891,7 +887,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

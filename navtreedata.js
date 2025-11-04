@@ -25,6 +25,25 @@
 var NAVTREE =
 [
   [ "Social Network Project", "index.html", [
+    [ "Соціальна мережа на основі графів", "md_README.html", [
+      [ "Опис проєкту", "md_README.html#autotoc_md1", null ],
+      [ "Основні можливості", "md_README.html#autotoc_md3", [
+        [ "Робота з графом", "md_README.html#autotoc_md4", null ],
+        [ "Алгоритми", "md_README.html#autotoc_md5", null ],
+        [ "Додаткові функції", "md_README.html#autotoc_md6", null ]
+      ] ],
+      [ "Структура проєкту", "md_README.html#autotoc_md8", null ],
+      [ "Використані технології", "md_README.html#autotoc_md10", null ],
+      [ "Як запустити програму", "md_README.html#autotoc_md12", [
+        [ "Збірка", "md_README.html#autotoc_md13", null ],
+        [ "Запуск", "md_README.html#autotoc_md14", null ]
+      ] ],
+      [ "Документація", "md_README.html#autotoc_md16", [
+        [ "Формат документування", "md_README.html#autotoc_md17", null ]
+      ] ],
+      [ "Автоматична генерація через GitHub Actions", "md_README.html#autotoc_md18", null ],
+      [ "Онлайн-документація", "md_README.html#autotoc_md19", null ]
+    ] ],
     [ "Test List", "test.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -41,6 +60,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -52,7 +72,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "GraphAlgorithms_8cpp.html",
-"test__socialnetwork_8cpp.html#acba0dfd71291d915f37ed24b7fe2f949"
+"md_README.html#autotoc_md14"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

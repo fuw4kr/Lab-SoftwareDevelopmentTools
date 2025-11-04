@@ -93,20 +93,18 @@ $(document).ready(function(){initNavTree('test.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt>Member <a class="el" href="test__graph_8cpp.html#ad02163572fd4ce4f4746684c12d8d98f">TEST</a>  (GraphTest, AddRemoveEdge)</dt>
+<dt>Member <a class="el" href="test__graph_8cpp.html#a865ff83d920a5a5e160adfb45a485bfe">EXPECT_EQ</a>  (g.getAllEdges().size(), 0)</dt>
+<dd><a class="anchor" id="_test000007"></a>Verifies that duplicate vertex IDs are ignored or replaced safely.  </dd>
+<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a806e7f6caa36b901a1a1bcdfd307e9a7">EXPECT_EQ</a>  (network.getUser(999), nullptr)</dt>
+<dd><a class="anchor" id="_test000023"></a>Verifies that areConnected() and distanceBetween() work correctly.  </dd>
+<dt>Member <a class="el" href="test__graph_8cpp.html#a776caa521236eab082e1a1562568cc6e">EXPECT_NO_THROW</a>  ({ g.addEdge(e2);})</dt>
+<dd><a class="anchor" id="_test000009"></a>Checks that querying neighbors of a missing vertex returns an empty list.  </dd>
+<dt>Member <a class="el" href="test__graph_8cpp.html#a0d25d4febb56ea2027de87cfcf7fb1e6">EXPECT_TRUE</a>  (find(neighbors.begin(), neighbors.end(), 2) !=neighbors.end())</dt>
+<dd><a class="anchor" id="_test000004"></a>Ensures dynamic_cast works correctly for edge subclasses.  </dd>
+<dt>Member <a class="el" href="test__graph_8cpp.html#a3d6957bab30579cd668f98eed5d2da90">removeEdge</a>  (1, 2)</dt>
+<dd><a class="anchor" id="_test000003"></a>Checks neighbor retrieval for a vertex with multiple connections.  </dd>
+<dt>Member <a class="el" href="test__graph_8cpp.html#a3dae149983a5d641098f173b069b5325">removeVertex</a>  (999)</dt>
 <dd><a class="anchor" id="_test000002"></a>Verifies adding and removing edges between vertices.  </dd>
-<dt>Member <a class="el" href="test__user_8cpp.html#a3fffe1146951dff4114e7fa3c242a33b">TEST</a>  (UserTest, ChangeReputationNegative)</dt>
-<dd><a class="anchor" id="_test000039"></a>Ensures negative reputation adjustments decrease or maintain value.  </dd>
-<dt>Member <a class="el" href="test__user_8cpp.html#add7bd08427b03765b5a0db66499aaa55">TEST</a>  (UserTest, PremiumUserSpendTooMuch)</dt>
-<dd><a class="anchor" id="_test000038"></a>Verifies <a class="el" href="classPremiumUser.html" title="Represents a premium user with special privileges and rewards.">PremiumUser</a> behavior when trying to spend more points than available.  </dd>
-<dt>Member <a class="el" href="test__user_8cpp.html#a466dfb9dd27e26edb99f7b1a2eefe8ed">TEST</a>  (UserTest, PostEdge)</dt>
-<dd><a class="anchor" id="_test000037"></a>Checks <a class="el" href="classPost.html" title="Represents a user post.">Post</a> edge content and ensures <code>to</code> is set to -1.  </dd>
-<dt>Member <a class="el" href="test__user_8cpp.html#a137de28970b3a9493dcf63d6b544d75b">TEST</a>  (UserTest, MessageEdge)</dt>
-<dd><a class="anchor" id="_test000036"></a>Checks <a class="el" href="classMessage.html" title="Represents a message sent between two users.">Message</a> edge content and sender/receiver properties.  </dd>
-<dt>Member <a class="el" href="test__user_8cpp.html#a09793d5f8051c3cc9b0455593b510493">TEST</a>  (UserTest, SubscriptionEdge)</dt>
-<dd><a class="anchor" id="_test000035"></a>Validates <a class="el" href="classSubscription.html" title="Represents a one-directional subscription (follow).">Subscription</a> edge initialization.  </dd>
-<dt>Member <a class="el" href="test__user_8cpp.html#afb9e5373789c487e2778b54f9a387473">TEST</a>  (UserTest, FriendshipEdge)</dt>
-<dd><a class="anchor" id="_test000034"></a>Validates basic <a class="el" href="classFriendship.html" title="Represents a friendship relationship between two users.">Friendship</a> edge initialization.  </dd>
 <dt>Member <a class="el" href="test__user_8cpp.html#a6b06d4049184608f94f934c6d7d5cd5f">TEST</a>  (UserTest, PremiumUserPointsAndCheckmarks)</dt>
 <dd><a class="anchor" id="_test000033"></a>Tests <a class="el" href="classPremiumUser.html" title="Represents a premium user with special privileges and rewards.">PremiumUser</a> premium points, checkmarks, and bonus system.  </dd>
 <dt>Member <a class="el" href="test__user_8cpp.html#a41f25e93cc54bff00c493ffb33084666">TEST</a>  (UserTest, RegularUserLoginUpdate)</dt>
@@ -115,62 +113,46 @@ $(document).ready(function(){initNavTree('test.html',''); initResizable(); });
 <dd><a class="anchor" id="_test000031"></a>Ensures <a class="el" href="classRegularUser.html" title="Represents a standard (non-premium) user with activity tracking.">RegularUser</a> counters (followers, posts, messages, etc.) increment correctly when modified.  </dd>
 <dt>Member <a class="el" href="test__user_8cpp.html#ae576d18999014459f7c485f4c07278b3">TEST</a>  (UserTest, CreateUserAndUpdateFields)</dt>
 <dd><a class="anchor" id="_test000030"></a>Verifies that a basic <a class="el" href="classUser.html" title="Represents a generic user in the social network.">User</a> object initializes correctly and that profile fields can be updated as expected.  </dd>
-<dt>Member <a class="el" href="test__graph_8cpp.html#ad39fc1f0844a9cdb1904a48bb17f5a81">TEST</a>  (GraphTest, AddRemoveVertex)</dt>
-<dd><a class="anchor" id="_test000001"></a>Verifies adding and removing vertices from the graph.  </dd>
-<dt>Member <a class="el" href="test__graph_8cpp.html#adddd104173a21723f7a4243b2e536317">TEST</a>  (GraphTest, GetNeighbors)</dt>
-<dd><a class="anchor" id="_test000003"></a>Checks neighbor retrieval for a vertex with multiple connections.  </dd>
-<dt>Member <a class="el" href="test__graph_8cpp.html#a64febf144bf51eb046fba1a41c84f76a">TEST</a>  (GraphTest, TypeCastingEdges)</dt>
-<dd><a class="anchor" id="_test000004"></a>Ensures dynamic_cast works correctly for edge subclasses.  </dd>
+<dt>Member <a class="el" href="test__graph_8cpp.html#ab40056395665f72777c2bbab57cb9f3a">TEST</a>  (GraphTest, ExportToDotEmptyGraph)</dt>
+<dd><a class="anchor" id="_test000011"></a>Verifies proper memory cleanup on <a class="el" href="classGraph.html" title="Class representing a directed or undirected graph.">Graph</a> destruction.  </dd>
 <dt>Member <a class="el" href="test__graph_8cpp.html#a0f2fb2cabb2583ecddcfd17195e459fe">TEST</a>  (GraphTest, ExportToDot)</dt>
 <dd><a class="anchor" id="_test000005"></a>Checks that exporting to DOT format produces a valid file.  </dd>
 <dt>Member <a class="el" href="test__graph_8cpp.html#ad83d74648f7a8298ed00d56ba74e8a3f">TEST</a>  (GraphTest, RemoveVertexWithEdges)</dt>
 <dd><a class="anchor" id="_test000006"></a>Ensures vertex removal also deletes all connected edges.  </dd>
-<dt>Member <a class="el" href="test__graph_8cpp.html#a6027a4334f22f07e30c31f6ab46ac712">TEST</a>  (GraphTest, AddDuplicateVertex)</dt>
-<dd><a class="anchor" id="_test000007"></a>Verifies that duplicate vertex IDs are ignored or replaced safely.  </dd>
 <dt>Member <a class="el" href="test__graph_8cpp.html#aecd6762eecdd10fb2b65c5c8bee0758a">TEST</a>  (GraphTest, AddEdgeWithMissingEndpoints)</dt>
 <dd><a class="anchor" id="_test000008"></a>Ensures adding edges with non-existent endpoints is handled gracefully.  </dd>
-<dt>Member <a class="el" href="test__graph_8cpp.html#a9689db71bcf7fcab397f82fbc14998e7">TEST</a>  (GraphTest, GetNeighborsOfNonExistingVertex)</dt>
-<dd><a class="anchor" id="_test000009"></a>Checks that querying neighbors of a missing vertex returns an empty list.  </dd>
 <dt>Member <a class="el" href="test__graph_8cpp.html#ab40056395665f72777c2bbab57cb9f3a">TEST</a>  (GraphTest, ExportToDotEmptyGraph)</dt>
 <dd><a class="anchor" id="_test000010"></a>Ensures exporting an empty graph still produces a valid DOT file.  </dd>
-<dt>Member <a class="el" href="test__graph_8cpp.html#ad2188fc06621ec113945f917e40361e5">TEST</a>  (GraphTest, DestructorCleanup)</dt>
-<dd><a class="anchor" id="_test000011"></a>Verifies proper memory cleanup on <a class="el" href="classGraph.html" title="Class representing a directed or undirected graph.">Graph</a> destruction.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#aaf3946a1eb01f8f93ccf4ffacb1ebff8">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AddDuplicateFriendship_Idempotent)</dt>
-<dd><a class="anchor" id="_test000026"></a>Duplicate friendships should not result in multiple edges.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#af953c366f4900d1bb9d77f7868bd3923">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AddPost_ValidUser_StoredSuccessfully)</dt>
-<dd><a class="anchor" id="_test000029"></a>Adding a valid post should store it successfully.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a1d9b65c5bab3c95368b8a731bac93889">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, SendMessage_ValidUsers_CreatesMessageEdge)</dt>
-<dd><a class="anchor" id="_test000028"></a>Sending a valid message should create a message edge.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a7a5caf5c194cbd44daae707e992da070">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, RemoveExistingFriendship_BothDirectionsRemoved)</dt>
-<dd><a class="anchor" id="_test000027"></a><a class="el" href="classFriendship.html" title="Represents a friendship relationship between two users.">Friendship</a> removal should be symmetric (both directions).  </dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a6f73aff80a53aa4fb07a678c288e34bd">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AddAndGetUser)</dt>
 <dd><a class="anchor" id="_test000012"></a>Ensures users can be added and retrieved correctly.  </dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a7cca6d62e5c0fcb96660d6aeb8dbf62e">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, DetectFriendGroups)</dt>
-<dd><a class="anchor" id="_test000025"></a>Detects friend triangles (3-member groups).  </dd>
+<dd><p class="startdd"><a class="anchor" id="_test000029"></a>Adding a valid post should store it successfully. </p>
+<p class="interdd"><a class="anchor" id="_test000028"></a>Sending a valid message should create a message edge. </p>
+<p class="interdd"><a class="anchor" id="_test000027"></a><a class="el" href="classFriendship.html" title="Represents a friendship relationship between two users.">Friendship</a> removal should be symmetric (both directions). </p>
+<p class="interdd"><a class="anchor" id="_test000026"></a>Duplicate friendships should not result in multiple edges. </p>
+<p class="enddd"><a class="anchor" id="_test000025"></a>Detects friend triangles (3-member groups).  </p>
+</dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#acba0dfd71291d915f37ed24b7fe2f949">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, CommonSubscriptions)</dt>
 <dd><a class="anchor" id="_test000024"></a>Validates that users can have subscriptions, and shared ones are detected.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a0942da5247d5231fc67bcfefbe733666">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AreConnectedAndDistance)</dt>
-<dd><a class="anchor" id="_test000023"></a>Verifies that areConnected() and distanceBetween() work correctly.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#ac38378ee98759e5e6407996a16458738">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AddPost_InvalidUser_NoCrash)</dt>
-<dd><a class="anchor" id="_test000022"></a>Adding posts for invalid users should not crash.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a6c92753518292f6064382ad895b5b123">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, SendMessage_InvalidUsers_NoCrash)</dt>
-<dd><a class="anchor" id="_test000021"></a>Invalid message sending attempts should not crash or create edges.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a76c82c712bb6aa49fbef58df264fd675">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, RemoveFriendship_InvalidIds_NoCrash)</dt>
-<dd><a class="anchor" id="_test000020"></a>Removing friendships with invalid IDs should be safe.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a999fc3d2159bbad3d8194803193c5940">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AddFriendship_InvalidIds_NoCrash)</dt>
-<dd><a class="anchor" id="_test000019"></a>Adding friendships with invalid user IDs should not crash.  </dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a316caac182ef33693d458012dec2aa02">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, AddNullUser_NoCrash)</dt>
-<dd><a class="anchor" id="_test000018"></a>Adding null users should not cause crashes or alter the graph.  </dd>
+<dd><p class="startdd"><a class="anchor" id="_test000022"></a>Adding posts for invalid users should not crash. </p>
+<p class="interdd"><a class="anchor" id="_test000021"></a>Invalid message sending attempts should not crash or create edges. </p>
+<p class="interdd"><a class="anchor" id="_test000020"></a>Removing friendships with invalid IDs should be safe. </p>
+<p class="interdd"><a class="anchor" id="_test000019"></a>Adding friendships with invalid user IDs should not crash. </p>
+<p class="enddd"><a class="anchor" id="_test000018"></a>Adding null users should not cause crashes or alter the graph.  </p>
+</dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a20fd5ce5c1a2b06863c64f6360e7da92">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, CloseFriends)</dt>
-<dd><a class="anchor" id="_test000017"></a>Confirms detection of “close friends” (friends-of-friends).  </dd>
+<dd><a class="anchor" id="_test000017"></a>Confirms detection of ï¿½close friendsï¿½ (friends-of-friends).  </dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a6ae9b5d9be655dd0397f82b4bf0fc2c8">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, MutualFriends)</dt>
 <dd><a class="anchor" id="_test000016"></a>Validates that mutual friends are detected correctly.  </dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a54de6344e03f2d4ec22365a7b5f9b2ca">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, FriendsOfUser)</dt>
 <dd><a class="anchor" id="_test000015"></a>Ensures friendship relationships are properly stored and retrievable.  </dd>
-<dt>Member <a class="el" href="test__socialnetwork_8cpp.html#a957da07019bfcf7ca9bc3f5d398ac9dd">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, RemoveUser)</dt>
-<dd><a class="anchor" id="_test000014"></a>Verifies removing existing and non-existing users works safely.  </dd>
 <dt>Member <a class="el" href="test__socialnetwork_8cpp.html#aa1812c6174c5cfb329b1177cac543c13">TEST_F</a>  (<a class="el" href="classSocialNetworkTest.html" title="Google Test fixture providing a reusable setup for SocialNetwork tests.">SocialNetworkTest</a>, DuplicateUserId)</dt>
-<dd><a class="anchor" id="_test000013"></a>Checks duplicate user IDs handling (should remain consistent). </dd>
+<dd><p class="startdd"><a class="anchor" id="_test000014"></a>Verifies removing existing and non-existing users works safely. </p>
+<p class="enddd"><a class="anchor" id="_test000013"></a>Checks duplicate user IDs handling (should remain consistent).  </p>
+</dd>
+<dt>Class <a class="el" href="classTestVertex.html">TestVertex</a>  </dt>
+<dd><a class="anchor" id="_test000001"></a>Verifies adding and removing vertices from the graph. </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -1,7 +1,6 @@
 var classSocialNetworkTest =
 [
     [ "SetUp", "classSocialNetworkTest.html#a89aff32f61e0c78302f7c41a3f6e6feb", null ],
-    [ "TearDown", "classSocialNetworkTest.html#a15dc135cd9006250d3a304f612b7e9f3", null ],
     [ "createdUsers", "classSocialNetworkTest.html#a7a62ffa4a307b9489dfb04febd4dc7fa", null ],
     [ "network", "classSocialNetworkTest.html#a513e4a15ccadb2657bfcec8a1ce22818", null ],
     [ "u1", "classSocialNetworkTest.html#aeb5838b59c7d0ba199972814fee5063f", null ],
