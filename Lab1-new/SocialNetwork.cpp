@@ -32,6 +32,11 @@ void SocialNetwork::addUser(User* user) {
         LOG_ERROR("Attempted to add null user");
         return;
     }
+    if (users.find(user->getId()) != users.end()) {
+        LOG_WARN("User with ID " + to_string(user->getId()) + " already exists.");
+        return;
+    }
+    users[user->getId()] = user;
     addVertex(user);
     LOG_INFO("Added user ID=" + to_string(user->getId()) + " name=" + user->getName());
 }
@@ -113,7 +118,7 @@ void SocialNetwork::addSubscription(int followerId, int followeeId) {
  */
 void SocialNetwork::sendMessage(int senderId, int receiverId, const string& text) {
     if (!getUser(senderId) || !getUser(receiverId)) {
-        LOG_ERROR("Cannot send message — user not found");
+        LOG_ERROR("Cannot send message â€” user not found");
         return;
     }
     addEdge(new Message(senderId, receiverId, text));
@@ -133,7 +138,7 @@ void SocialNetwork::sendMessage(int senderId, int receiverId, const string& text
  */
 void SocialNetwork::addPost(int authorId, const string& content) {
     if (!getUser(authorId)) {
-        LOG_ERROR("Cannot add post — user not found: " + to_string(authorId));
+        LOG_ERROR("Cannot add post â€” user not found: " + to_string(authorId));
         return;
     }
     addEdge(new Post(authorId, content));
@@ -247,6 +252,53 @@ vector<User*> SocialNetwork::findCommonSubscriptions(int userA, int userB) {
  * @param userB Second user's ID.
  * @return True if connected, otherwise false.
  */
+vector<Message*> SocialNetwork::getMessagesOfUser(int userId) const {
+    LOG_INFO("Retrieving messages of user ID=" + to_string(userId));
+
+    vector<Message*> messages;
+
+    if (!getUser(userId)) {
+        LOG_WARN("User not found: ID=" + to_string(userId));
+        return messages;
+    }
+
+    for (auto* e : getAllEdges()) {
+        if (auto* m = dynamic_cast<Message*>(e)) {
+            if (m->getFrom() == userId || m->getTo() == userId) {
+                messages.push_back(m);
+            }
+        }
+    }
+
+    LOG_DEBUG("Messages found for user ID=" + to_string(userId) +
+        ": " + to_string(messages.size()));
+    return messages;
+}
+
+vector<Post*> SocialNetwork::getPostsOfUser(int userId) const {
+    LOG_INFO("Retrieving posts of user ID=" + to_string(userId));
+
+    vector<Post*> posts;
+
+    if (!getUser(userId)) {
+        LOG_WARN("User not found: ID=" + to_string(userId));
+        return posts;
+    }
+
+    for (auto* e : getAllEdges()) {
+        if (auto* p = dynamic_cast<Post*>(e)) {
+            if (p->getFrom() == userId || p->getTo() == userId) {
+                posts.push_back(p);
+            }
+        }
+    }
+
+    LOG_DEBUG("Posts found for user ID=" + to_string(userId) +
+        ": " + to_string(posts.size()));
+    return posts;
+}
+
+
 bool SocialNetwork::areConnected(int userA, int userB) {
     LOG_INFO("Checking if users " + to_string(userA) + " and " + to_string(userB) + " are connected");
     vector<pair<int, int>> edgesList;

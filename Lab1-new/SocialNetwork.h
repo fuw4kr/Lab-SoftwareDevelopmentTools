@@ -33,12 +33,15 @@ using namespace std;
  * to include user management, relationships, content, and analysis.
  */
 class SocialNetwork : public Graph, public GraphAlgorithms {
-public:
+private:
+    map<int, User*> users;
 
     /**
      * @brief Adds a new user to the network.
      * @param user Pointer to the User object.
      */
+public:
+
     void addUser(User* user);
 
     /**
@@ -126,6 +129,8 @@ public:
      * @return Vector of User pointers representing common subscriptions.
      */
     vector<User*> findCommonSubscriptions(int userA, int userB);
+    vector<Message*> getMessagesOfUser(int userId) const;
+    vector<Post*> getPostsOfUser(int userId) const;
 
     /**
      * @brief Checks whether two users are connected by any path.
@@ -144,7 +149,7 @@ public:
     int distanceBetween(int userA, int userB);
 
     /**
-     * @brief Computes shortest paths from a starting user using Dijkstra’s algorithm.
+     * @brief Computes shortest paths from a starting user using Dijkstraï¿½s algorithm.
      * @param startId Starting user's ID.
      * @return Map of user IDs and their shortest distances.
      */

@@ -133,6 +133,9 @@ protected:
     /**
      * @brief Graph destructor that releases memory.
      */
+
+public:
+
     virtual ~Graph();
 
     /**
@@ -198,11 +201,12 @@ protected:
      */
     virtual void exportToDotGraph(const string& filename) const;
 
-public:
+    public:
     /**
      * @brief Calls a function for each vertex in the graph.
      * @param f Function that accepts a Vertex*.
      */
+
     template <typename Func>
     void forEachVertex(Func f) const {
         for (auto& p : vertices)

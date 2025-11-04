@@ -21,6 +21,7 @@ using namespace std;
  * @test Verifies that a basic User object initializes correctly
  * and that profile fields can be updated as expected.
  */
+
 TEST(UserTest, CreateUserAndUpdateFields) {
     User u(1, "Alice", "alice@mail.com");
     EXPECT_EQ(u.getName(), "Alice");
@@ -68,6 +69,7 @@ TEST(UserTest, RegularUserCounters) {
 /**
  * @test Confirms that RegularUser login time updates properly.
  */
+
 TEST(UserTest, RegularUserLoginUpdate) {
     RegularUser u(3, "Charlie", "charlie@mail.com");
     time_t oldLogin = u.getLastLogin();
@@ -81,6 +83,7 @@ TEST(UserTest, RegularUserLoginUpdate) {
 /**
  * @test Tests PremiumUser premium points, checkmarks, and bonus system.
  */
+
 TEST(UserTest, PremiumUserPointsAndCheckmarks) {
     PremiumUser u(4, "Diana", "diana@mail.com", 50);
 
@@ -96,9 +99,11 @@ TEST(UserTest, PremiumUserPointsAndCheckmarks) {
     EXPECT_LE(u.getPremiumPoints(), before);
 }
 
+<<<<<< feature/docs-ci
 /**
  * @test Validates basic Friendship edge initialization.
  */
+
 TEST(UserTest, FriendshipEdge) {
     Friendship f(1, 2);
     EXPECT_EQ(f.getFrom(), 1);

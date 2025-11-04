@@ -10,6 +10,7 @@
  * Kristina Zakharchenko
  */
 
+
 #include "gtest/gtest.h"
 #include "Graph.h"
 #include "User.h"
@@ -38,6 +39,18 @@ public:
 /**
  * @test Verifies adding and removing vertices from the graph.
  */
+class TestVertex : public Vertex {
+public:
+    TestVertex(int id) : Vertex(id) {}
+    void print() const override {} 
+};
+
+class TestEdge : public Edge {
+public:
+    TestEdge(int f, int t) : Edge(f, t) {}
+    void print() const override {} 
+};
+
 TEST(GraphTest, AddRemoveVertex) {
     Graph g;
 
@@ -47,6 +60,7 @@ TEST(GraphTest, AddRemoveVertex) {
     EXPECT_EQ(g.getVertex(1), v1);
 
     g.addVertex(nullptr); // should not crash
+    g.addVertex(nullptr); 
     EXPECT_EQ(g.getAllVertices().size(), 1);
 
     g.removeVertex(1);
@@ -59,6 +73,9 @@ TEST(GraphTest, AddRemoveVertex) {
 /**
  * @test Verifies adding and removing edges between vertices.
  */
+    g.removeVertex(999); 
+}
+
 TEST(GraphTest, AddRemoveEdge) {
     Graph g;
     auto v1 = new TestVertex(1);
@@ -79,6 +96,9 @@ TEST(GraphTest, AddRemoveEdge) {
 /**
  * @test Checks neighbor retrieval for a vertex with multiple connections.
  */
+    g.removeEdge(1, 2); 
+}
+
 TEST(GraphTest, GetNeighbors) {
     Graph g;
     auto v1 = new TestVertex(1);
@@ -100,6 +120,10 @@ TEST(GraphTest, GetNeighbors) {
 /**
  * @test Ensures dynamic_cast works correctly for edge subclasses.
  */
+    EXPECT_TRUE(find(neighbors.begin(), neighbors.end(), 2) != neighbors.end());
+    EXPECT_TRUE(find(neighbors.begin(), neighbors.end(), 3) != neighbors.end());
+}
+
 TEST(GraphTest, TypeCastingEdges) {
     Graph g;
     auto v1 = new TestVertex(1);
@@ -170,6 +194,10 @@ TEST(GraphTest, RemoveVertexWithEdges) {
 /**
  * @test Verifies that duplicate vertex IDs are ignored or replaced safely.
  */
+
+    EXPECT_EQ(g.getAllEdges().size(), 0); 
+}
+
 TEST(GraphTest, AddDuplicateVertex) {
     Graph g;
     auto v1 = new TestVertex(1);
@@ -177,6 +205,7 @@ TEST(GraphTest, AddDuplicateVertex) {
     g.addVertex(v1);
     size_t before = g.getAllVertices().size();
     g.addVertex(v2);
+    g.addVertex(v2); 
     EXPECT_EQ(g.getAllVertices().size(), before)
         << "Graph should reject duplicate vertex IDs";
 }
@@ -192,6 +221,11 @@ TEST(GraphTest, AddEdgeWithMissingEndpoints) {
     auto e1 = new TestEdge(1, 2);
     EXPECT_NO_THROW({ g.addEdge(e1); });
 
+    auto e1 = new TestEdge(1, 2); 
+    EXPECT_NO_THROW({
+        g.addEdge(e1);
+        });
+
     EXPECT_EQ(g.getAllEdges().size(), 0);
 
     auto e2 = new TestEdge(3, 4);
@@ -202,6 +236,13 @@ TEST(GraphTest, AddEdgeWithMissingEndpoints) {
 /**
  * @test Checks that querying neighbors of a missing vertex returns an empty list.
  */
+
+    EXPECT_NO_THROW({
+        g.addEdge(e2);
+        });
+    EXPECT_EQ(g.getAllEdges().size(), 0);
+}
+
 TEST(GraphTest, GetNeighborsOfNonExistingVertex) {
     Graph g;
     EXPECT_TRUE(g.getNeighbors(999).empty())
@@ -214,6 +255,12 @@ TEST(GraphTest, GetNeighborsOfNonExistingVertex) {
 TEST(GraphTest, ExportToDotEmptyGraph) {
     Graph g;
     EXPECT_NO_THROW({ g.exportToDotGraph("empty.dot"); });
+
+TEST(GraphTest, ExportToDotEmptyGraph) {
+    Graph g;
+    EXPECT_NO_THROW({
+        g.exportToDotGraph("empty.dot");
+        });
 
     ifstream file("empty.dot");
     ASSERT_TRUE(file.is_open());
@@ -236,4 +283,9 @@ TEST(GraphTest, DestructorCleanup) {
         g.addEdge(new TestEdge(1, 2));
     }
     SUCCEED(); // No crashes or leaks
+}
+        auto e1 = new TestEdge(1, 2);
+        g.addEdge(e1);
+    }
+    SUCCEED(); 
 }
