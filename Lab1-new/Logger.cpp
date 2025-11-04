@@ -1,19 +1,48 @@
+/**
+ * @file Logger.cpp
+ * @brief Implements the Logger class for thread-safe logging operations.
+ * @details Provides message formatting, timestamp generation, color-coded output,
+ * and file persistence. Supports both console and file logging simultaneously.
+ *
+ * @date 04.11.2025
+ * @version 1.0
+ * @see Logger
+ * @see LogLevel
+ * @author
+ * Kristina Zakharchenko
+ */
+
 #include "Logger.h"
 #include <sstream>
 #include <iomanip>
 #include <ctime>
 
+ /**
+  * @brief Default constructor (private) for singleton initialization.
+  */
 Logger::Logger() = default;
 
+/**
+ * @brief Destructor closes the file stream if still open.
+ */
 Logger::~Logger() {
     if (file.is_open()) file.close();
 }
 
+/**
+ * @brief Returns a reference to the singleton Logger instance.
+ */
 Logger& Logger::get() {
     static Logger instance;
     return instance;
 }
 
+/**
+ * @brief Initializes the Logger by opening the output file and setting configurations.
+ * @param filename Log file path.
+ * @param level Minimum log level to capture.
+ * @param console Whether to also print to console.
+ */
 void Logger::init(const string& filename, LogLevel level, bool console) {
     lock_guard<mutex> lock(mtx);
     minLevel = level;
@@ -24,6 +53,9 @@ void Logger::init(const string& filename, LogLevel level, bool console) {
     }
 }
 
+/**
+ * @brief Closes the log file and writes the shutdown message.
+ */
 void Logger::shutdown() {
     lock_guard<mutex> lock(mtx);
     if (file.is_open()) {
@@ -32,10 +64,18 @@ void Logger::shutdown() {
     }
 }
 
+/**
+ * @brief Checks if the given log level should be processed.
+ * @param level The log level to verify.
+ * @return True if current minLevel allows logging of this message.
+ */
 bool Logger::isEnabled(LogLevel level) const {
     return static_cast<int>(level) >= static_cast<int>(minLevel);
 }
 
+/**
+ * @brief Returns the current timestamp formatted as "YYYY-MM-DD HH:MM:SS".
+ */
 string Logger::timestamp() const {
     ostringstream oss;
     time_t now = time(nullptr);
@@ -49,6 +89,9 @@ string Logger::timestamp() const {
     return oss.str();
 }
 
+/**
+ * @brief Converts a LogLevel enum to its string representation.
+ */
 string Logger::levelToString(LogLevel level) const {
     switch (level) {
     case LogLevel::DEBUG: return "DEBUG";
@@ -59,35 +102,21 @@ string Logger::levelToString(LogLevel level) const {
     }
 }
 
+/**
+ * @brief Maps a log level to a corresponding ANSI color escape sequence.
+ */
 string Logger::levelToColor(LogLevel level) const {
     switch (level) {
-    case LogLevel::DEBUG: return "\033[36m";
-    case LogLevel::INFO:  return "\033[32m";
-    case LogLevel::WARN:  return "\033[33m";
-    case LogLevel::ERROR: return "\033[31m";
-    default:              return "\033[0m";
+    case LogLevel::DEBUG: return "\033[36m"; // Blue
+    case LogLevel::INFO:  return "\033[32m"; // Green
+    case LogLevel::WARN:  return "\033[33m"; // Yellow
+    case LogLevel::ERROR: return "\033[31m"; // Red
+    default:              return "\033[0m";  // Reset
     }
 }
 
-void Logger::log(LogLevel level, const string& msg,
-    const char* fileName, int line) {
-    if (!isEnabled(level)) return;
-
-    ostringstream oss;
-    oss << "[" << timestamp() << "] "
-        << "[" << levelToString(level) << "] "
-        << fileName << ":" << line << " "
-        << msg;
-
-    string lineMsg = oss.str();
-
-    lock_guard<mutex> lock(mtx);
-
-    if (consoleOutput) {
-        cout << levelToColor(level) << lineMsg << "\033[0m" << endl;
-    }
-
-    if (file.is_open()) {
-        file << lineMsg << endl;
-    }
-}
+/**
+ * @brief Logs a message to both console and file.
+ * @param level The severity level.
+ * @param msg The log message text.
+ * @param fileName*
