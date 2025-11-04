@@ -1,0 +1,26 @@
+var classSocialNetwork =
+[
+    [ "addFriendship", "classSocialNetwork.html#a8e5e64370913c541bb0156fd4952e7cc", null ],
+    [ "addPost", "classSocialNetwork.html#a633650be79d87e762c130c3cf976cf88", null ],
+    [ "addSubscription", "classSocialNetwork.html#a0fabe3ed428d4307b2d8fd62b6ed01db", null ],
+    [ "addUser", "classSocialNetwork.html#a050dbb0e2a888f71f9fa1a9b9dc174e2", null ],
+    [ "areConnected", "classSocialNetwork.html#ad6143753822f095467ea76e16cb0420c", null ],
+    [ "detectFriendGroups", "classSocialNetwork.html#aa6a490f4aa14f14700a133c1459c009f", null ],
+    [ "distanceBetween", "classSocialNetwork.html#a1c5c7c9b538417144f7a7101e85afbc4", null ],
+    [ "exportToDot", "classSocialNetwork.html#af7f7a8e634e8ab00af66ffac24546900", null ],
+    [ "findCloseFriends", "classSocialNetwork.html#acf496f867bebb7355215d79bcbaa4101", null ],
+    [ "findCommonSubscriptions", "classSocialNetwork.html#a5d25c544f91bb136c2117bda319c5ea1", null ],
+    [ "findMutualFriends", "classSocialNetwork.html#ab162156e252537a0fee34fe390255544", null ],
+    [ "findUsersByLocation", "classSocialNetwork.html#a937c542e3c23a153e4eddac0ee2233e2", null ],
+    [ "generateRandomUsers", "classSocialNetwork.html#a336c51f8a2edab7ac8d9bcfc4e045725", null ],
+    [ "getFriendsOfUser", "classSocialNetwork.html#a0ffa1e4b08c41da8179c06b114be8ca9", null ],
+    [ "getUser", "classSocialNetwork.html#aed314e9227d49560184d7dead02286b1", null ],
+    [ "printNetwork", "classSocialNetwork.html#a512550e21c4b0438393469f11b8ea00f", null ],
+    [ "printStatistics", "classSocialNetwork.html#a051b40508ea554e147c1e28b697c29f5", null ],
+    [ "removeFriendship", "classSocialNetwork.html#ac0612ae4e46cd2cf3f78955052a809e4", null ],
+    [ "removeUser", "classSocialNetwork.html#ab51ed8c05378500751728d572c2a5380", null ],
+    [ "saveToTextFile", "classSocialNetwork.html#a035fa0ba5453ffb1e671b4270c978a93", null ],
+    [ "sendMessage", "classSocialNetwork.html#ae59cf45fa92a6baba7f440e209b598f5", null ],
+    [ "shortestPathsFrom", "classSocialNetwork.html#a23399736ef0acbea68b6935a39500f2c", null ],
+    [ "userCentrality", "classSocialNetwork.html#a3e67520f8daea55f7d646e640d6e0cab", null ]
+];

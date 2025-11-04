@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['savetotextfile_0',['saveToTextFile',['../classSocialNetwork.html#a035fa0ba5453ffb1e671b4270c978a93',1,'SocialNetwork']]],
+  ['sendmessage_1',['sendmessage',['../classSocialNetwork.html#ae59cf45fa92a6baba7f440e209b598f5',1,'SocialNetwork::sendMessage()'],['../classRegularUser.html#a235fc2484461f8614dbc6aee4678cc94',1,'RegularUser::sendMessage()']]],
+  ['setbirthday_2',['setBirthday',['../classUser.html#a1fa309a1f889d9b089e63856c918dfe4',1,'User']]],
+  ['setgender_3',['setGender',['../classUser.html#ae6f9afa96390f49632f0088cbfbe1408',1,'User']]],
+  ['setphone_4',['setPhone',['../classUser.html#a85dbeb3d3c055fb77ffad857992f8f0f',1,'User']]],
+  ['setup_5',['SetUp',['../classSocialNetworkTest.html#a89aff32f61e0c78302f7c41a3f6e6feb',1,'SocialNetworkTest']]],
+  ['shortestpathsfrom_6',['shortestPathsFrom',['../classSocialNetwork.html#a23399736ef0acbea68b6935a39500f2c',1,'SocialNetwork']]],
+  ['shutdown_7',['shutdown',['../classLogger.html#a9dbb809282232adfbe81a780077e587a',1,'Logger']]],
+  ['socialnetwork_8',['SocialNetwork',['../classSocialNetwork.html',1,'']]],
+  ['socialnetwork_2ecpp_9',['SocialNetwork.cpp',['../SocialNetwork_8cpp.html',1,'']]],
+  ['socialnetwork_2eh_10',['SocialNetwork.h',['../SocialNetwork_8h.html',1,'']]],
+  ['socialnetworktest_11',['SocialNetworkTest',['../classSocialNetworkTest.html',1,'']]],
+  ['spendpremiumpoints_12',['spendPremiumPoints',['../classPremiumUser.html#ac4e04e67e925fc743e380caefea28a84',1,'PremiumUser']]],
+  ['static_13',['Static',['../classVertexBase.html#aecc2b45fa0d78dcb357a02b42beed2c2',1,'VertexBase']]],
+  ['subscription_14',['subscription',['../classSubscription.html',1,'Subscription'],['../classSubscription.html#a0d134956962fec484d3e2c577e3ba6af',1,'Subscription::Subscription()']]]
+];
