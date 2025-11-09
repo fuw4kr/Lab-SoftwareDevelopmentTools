@@ -1,8 +1,26 @@
+/**
+ * @file UserTests.cpp
+ * @brief Unit tests for User, RegularUser, PremiumUser, and related Edge types.
+ * @details This file verifies the correct behavior of user profile updates,
+ * user statistics, premium features, and relationship edges (Friendship,
+ * Subscription, Message, and Post).
+ *
+ * @date 04.11.2025
+ * @version 1.0
+ * @author
+ * Kristina Zakharchenko
+ */
+
 #include "gtest/gtest.h"
 #include "User.h"
 #include <string>
 #include <ctime>
 using namespace std;
+
+/**
+ * @test Verifies that a basic User object initializes correctly
+ * and that profile fields can be updated as expected.
+ */
 
 TEST(UserTest, CreateUserAndUpdateFields) {
     User u(1, "Alice", "alice@mail.com");
@@ -24,6 +42,10 @@ TEST(UserTest, CreateUserAndUpdateFields) {
     EXPECT_EQ(u.getBirthday(), "1990-01-01");
 }
 
+/**
+ * @test Ensures RegularUser counters (followers, posts, messages, etc.)
+ * increment correctly when modified.
+ */
 TEST(UserTest, RegularUserCounters) {
     RegularUser u(2, "Bob", "bob@mail.com");
 
@@ -44,6 +66,10 @@ TEST(UserTest, RegularUserCounters) {
     EXPECT_GE(u.getReputation(), 5);
 }
 
+/**
+ * @test Confirms that RegularUser login time updates properly.
+ */
+
 TEST(UserTest, RegularUserLoginUpdate) {
     RegularUser u(3, "Charlie", "charlie@mail.com");
     time_t oldLogin = u.getLastLogin();
@@ -53,6 +79,10 @@ TEST(UserTest, RegularUserLoginUpdate) {
     EXPECT_GE(u.getLastLogin(), oldLogin)
         << "Login timestamp should not decrease after update";
 }
+
+/**
+ * @test Tests PremiumUser premium points, checkmarks, and bonus system.
+ */
 
 TEST(UserTest, PremiumUserPointsAndCheckmarks) {
     PremiumUser u(4, "Diana", "diana@mail.com", 50);
@@ -69,18 +99,29 @@ TEST(UserTest, PremiumUserPointsAndCheckmarks) {
     EXPECT_LE(u.getPremiumPoints(), before);
 }
 
+<<<<<< feature/docs-ci
+/**
+ * @test Validates basic Friendship edge initialization.
+ */
+
 TEST(UserTest, FriendshipEdge) {
     Friendship f(1, 2);
     EXPECT_EQ(f.getFrom(), 1);
     EXPECT_EQ(f.getTo(), 2);
 }
 
+/**
+ * @test Validates Subscription edge initialization.
+ */
 TEST(UserTest, SubscriptionEdge) {
     Subscription s(2, 3);
     EXPECT_EQ(s.getFrom(), 2);
     EXPECT_EQ(s.getTo(), 3);
 }
 
+/**
+ * @test Checks Message edge content and sender/receiver properties.
+ */
 TEST(UserTest, MessageEdge) {
     Message m(1, 3, "Hello!");
     EXPECT_EQ(m.getFrom(), 1);
@@ -88,6 +129,9 @@ TEST(UserTest, MessageEdge) {
     EXPECT_EQ(m.getText(), "Hello!");
 }
 
+/**
+ * @test Checks Post edge content and ensures `to` is set to -1.
+ */
 TEST(UserTest, PostEdge) {
     Post p(4, "My post content");
     EXPECT_EQ(p.getFrom(), 4);
@@ -95,6 +139,10 @@ TEST(UserTest, PostEdge) {
     EXPECT_EQ(p.getTo(), -1);
 }
 
+/**
+ * @test Verifies PremiumUser behavior when trying to spend more points
+ * than available.
+ */
 TEST(UserTest, PremiumUserSpendTooMuch) {
     PremiumUser u(5, "Eve", "eve@mail.com", 20);
     int before = u.getPremiumPoints();
@@ -104,6 +152,9 @@ TEST(UserTest, PremiumUserSpendTooMuch) {
         << "Spending too many points should not increase total points";
 }
 
+/**
+ * @test Ensures negative reputation adjustments decrease or maintain value.
+ */
 TEST(UserTest, ChangeReputationNegative) {
     RegularUser u(6, "Frank", "frank@mail.com");
     int before = u.getReputation();

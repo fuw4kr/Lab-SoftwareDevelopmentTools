@@ -1,6 +1,27 @@
+/**
+ * @file User.cpp
+ * @brief Implements user-related classes for the social network.
+ * @details Defines the behavior of User, RegularUser, PremiumUser,
+ * and edge types such as Friendship, Subscription, Message, and Post.
+ *
+ * @see User
+ * @see RegularUser
+ * @see PremiumUser
+ * @see Friendship
+ * @see Subscription
+ * @see Message
+ * @see Post
+ *
+ * @date 04.11.2025
+ * @version 1.0
+ * @autor Kristina Zakharchenko
+ */
+
 #include "User.h"
 #include <iostream>
 using namespace std;
+
+// ---------------------- User ----------------------
 
 User::User(int id, const string& n, const string& e)
     : Vertex(id), name(n), email(e), biography(""), location(""), phone(""),
@@ -23,6 +44,8 @@ void User::print() const {
         << "Gender: " << gender << "\n"
         << "Birthday: " << birthday << "\n";
 }
+
+// ------------------ RegularUser -------------------
 
 RegularUser::RegularUser(int id, const string& n, const string& e)
     : User(id, n, e), reputation(0), followers(0), following(0),
@@ -50,6 +73,8 @@ void RegularUser::print() const {
         << "Messages sent: " << messagesSent << ", received: " << messagesReceived << "\n";
 }
 
+// ------------------ PremiumUser -------------------
+
 PremiumUser::PremiumUser(int id, const string& n, const string& e, int points)
     : RegularUser(id, n, e), premiumPoints(points) {
 }
@@ -74,12 +99,14 @@ void PremiumUser::print() const {
     cout << "[PremiumUser]\n"
         << "Name: " << name << "\n"
         << "Email: " << email << "\n"
-        << "Reputation: " << reputation << " (+ бонуси)\n"
+        << "Reputation: " << reputation << " (+ bonus)\n"
         << "Premium points: " << premiumPoints << "\n"
         << "Checkmark: ";
     for (auto& b : checkmark) cout << b << " ";
     cout << "\n";
 }
+
+// ---------------- Relationship Edges ---------------
 
 Friendship::Friendship(int f, int t) : Edge(f, t) {}
 void Friendship::print() const { cout << "Friendship: " << from << " <-> " << to << endl; }

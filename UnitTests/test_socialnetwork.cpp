@@ -1,8 +1,25 @@
+/**
+ * @file SocialNetworkTests.cpp
+ * @brief Unit tests for the SocialNetwork class and its user, friendship, and messaging logic.
+ * @details These tests cover user creation, friendship management, messaging,
+ * posting, relationship handling, and various edge cases.
+ *
+ * @date 04.11.2025
+ * @version 1.0
+ * @author
+ * Kristina Zakharchenko
+ */
+
 #include "gtest/gtest.h"
 #include "SocialNetwork.h"
 #include <algorithm>
 #include <vector>
 using namespace std;
+
+/**
+ * @class SocialNetworkTest
+ * @brief Google Test fixture providing a reusable setup for SocialNetwork tests.
+ */
 
 class SocialNetworkTest : public ::testing::Test {
 protected:
@@ -15,6 +32,10 @@ protected:
             u1 = new RegularUser(1, "Alice", "alice@mail.com");
             u2 = new RegularUser(2, "Bob", "bob@mail.com");
             u3 = new RegularUser(3, "Charlie", "charlie@mail.com");
+            createdUsers = { u1, u2, u3 };
+            for (auto* u : createdUsers)
+                network.addUser(u);
+            })());
             createdUsers = {u1, u2, u3};
             for (auto* u : createdUsers) 
                 network.addUser(u);       
@@ -28,6 +49,10 @@ protected:
     }
 };
 
+/**
+ * @test Ensures users can be added and retrieved correctly.
+ */
+
 TEST_F(SocialNetworkTest, AddAndGetUser) {
     ASSERT_NE(network.getUser(1), nullptr);
     ASSERT_NE(network.getUser(2), nullptr);
@@ -37,6 +62,17 @@ TEST_F(SocialNetworkTest, AddAndGetUser) {
     EXPECT_EQ(network.getUser(999), nullptr);
 }
 
+/**
+ * @test Checks duplicate user IDs handling (should remain consistent).
+ */
+TEST_F(SocialNetworkTest, DuplicateUserId) {
+    ASSERT_NE(network.getUser(1), nullptr);
+    EXPECT_EQ(network.getUser(1)->getName(), "Alice");
+}
+
+/**
+ * @test Verifies removing existing and non-existing users works safely.
+ */
 TEST_F(SocialNetworkTest, DuplicateUserId) {
     ASSERT_NE(network.getUser(1), nullptr);
     EXPECT_EQ(network.getUser(1), u1);
@@ -49,6 +85,10 @@ TEST_F(SocialNetworkTest, RemoveUser) {
     EXPECT_NO_THROW(network.removeUser(999));
 }
 
+/**
+ * @test Ensures friendship relationships are properly stored and retrievable.
+ */
+
 TEST_F(SocialNetworkTest, FriendsOfUser) {
     ASSERT_NO_FATAL_FAILURE({
         network.addFriendship(1, 2);
@@ -56,6 +96,10 @@ TEST_F(SocialNetworkTest, FriendsOfUser) {
         });
 
     auto friends2 = network.getFriendsOfUser(2);
+    ASSERT_FALSE(friends2.empty());
+
+    vector<int> friendIds;
+    for (auto* f : friends2) friendIds.push_back(f->getId());
     ASSERT_FALSE(friends2.empty()) << "User 2 should have friends before checking IDs";
 
     vector<int> friendIds;
@@ -67,6 +111,9 @@ TEST_F(SocialNetworkTest, FriendsOfUser) {
     EXPECT_EQ(friendIds.size(), 2);
 }
 
+/**
+ * @test Validates that mutual friends are detected correctly.
+ */
 TEST_F(SocialNetworkTest, MutualFriends) {
     ASSERT_NO_FATAL_FAILURE({
         network.addFriendship(1, 2);
@@ -74,6 +121,10 @@ TEST_F(SocialNetworkTest, MutualFriends) {
         });
 
     auto mutual = network.findMutualFriends(1, 3);
+    ASSERT_FALSE(mutual.empty());
+
+    vector<int> mutualIds;
+    for (auto* u : mutual) mutualIds.push_back(u->getId());
     ASSERT_FALSE(mutual.empty()) << "Mutual friends should not be empty";
 
     vector<int> mutualIds;
@@ -84,6 +135,10 @@ TEST_F(SocialNetworkTest, MutualFriends) {
     EXPECT_TRUE(find(mutualIds.begin(), mutualIds.end(), 2) != mutualIds.end());
 }
 
+/**
+ * @test Confirms detection of �close friends� (friends-of-friends).
+ */
+
 TEST_F(SocialNetworkTest, CloseFriends) {
     ASSERT_NO_FATAL_FAILURE({
         network.addFriendship(1, 2);
@@ -91,6 +146,10 @@ TEST_F(SocialNetworkTest, CloseFriends) {
         });
 
     auto close = network.findCloseFriends(1);
+    ASSERT_FALSE(close.empty());
+
+    vector<int> closeIds;
+    for (auto* u : close) closeIds.push_back(u->getId());
     ASSERT_FALSE(close.empty()) << "Close friends list should not be empty";
 
     vector<int> closeIds;
@@ -100,6 +159,12 @@ TEST_F(SocialNetworkTest, CloseFriends) {
     EXPECT_TRUE(find(closeIds.begin(), closeIds.end(), 3) != closeIds.end());
 }
 
+/**
+ * @test Adding null users should not cause crashes or alter the graph.
+ */
+TEST_F(SocialNetworkTest, AddNullUser_NoCrash) {
+    EXPECT_NO_THROW(network.addUser(nullptr));
+
 TEST_F(SocialNetworkTest, AddNullUser_NoCrash) {
     EXPECT_NO_THROW(network.addUser(nullptr));
 
@@ -107,6 +172,9 @@ TEST_F(SocialNetworkTest, AddNullUser_NoCrash) {
     EXPECT_EQ(network.getUser(999), nullptr);
 }
 
+/**
+ * @test Adding friendships with invalid user IDs should not crash.
+ */
 TEST_F(SocialNetworkTest, AddFriendship_InvalidIds_NoCrash) {
     ASSERT_NO_FATAL_FAILURE({
         EXPECT_NO_THROW({
@@ -118,6 +186,10 @@ TEST_F(SocialNetworkTest, AddFriendship_InvalidIds_NoCrash) {
     EXPECT_EQ(network.getFriendsOfUser(1).size(), 0);
 }
 
+/**
+ * @test Removing friendships with invalid IDs should be safe.
+ */
+
 TEST_F(SocialNetworkTest, RemoveFriendship_InvalidIds_NoCrash) {
     ASSERT_NO_FATAL_FAILURE({
         EXPECT_NO_THROW(network.removeFriendship(1, 999));
@@ -126,6 +198,10 @@ TEST_F(SocialNetworkTest, RemoveFriendship_InvalidIds_NoCrash) {
     EXPECT_EQ(network.getFriendsOfUser(1).size(), 0);
 }
 
+/**
+ * @test Invalid message sending attempts should not crash or create edges.
+ */
+
 TEST_F(SocialNetworkTest, SendMessage_InvalidUsers_NoCrash) {
     ASSERT_NO_FATAL_FAILURE({
         EXPECT_NO_THROW({
@@ -133,6 +209,11 @@ TEST_F(SocialNetworkTest, SendMessage_InvalidUsers_NoCrash) {
             network.sendMessage(999, 1, "Hi");
         });
         });
+}
+
+/**
+ * @test Adding posts for invalid users should not crash.
+ */
 
     EXPECT_TRUE(network.getMessagesOfUser(1).empty());
 }
@@ -141,6 +222,13 @@ TEST_F(SocialNetworkTest, AddPost_InvalidUser_NoCrash) {
     ASSERT_NO_FATAL_FAILURE({
         EXPECT_NO_THROW(network.addPost(999, "Hello"));
         });
+    EXPECT_EQ(network.getUser(999), nullptr);
+}
+
+/**
+ * @test Verifies that areConnected() and distanceBetween() work correctly.
+ */
+
 
     EXPECT_EQ(network.getUser(999), nullptr);
 }
@@ -156,11 +244,19 @@ TEST_F(SocialNetworkTest, AreConnectedAndDistance) {
     EXPECT_EQ(network.distanceBetween(1, 999), -1);
 }
 
+/**
+ * @test Validates that users can have subscriptions, and shared ones are detected.
+ */
+
 TEST_F(SocialNetworkTest, CommonSubscriptions) {
     ASSERT_NO_FATAL_FAILURE(network.addSubscription(1, 2));
     auto commonSubs = network.findCommonSubscriptions(1, 2);
     EXPECT_EQ(commonSubs.size(), 0);
 }
+
+/**
+ * @test Detects friend triangles (3-member groups).
+ */
 
 TEST_F(SocialNetworkTest, DetectFriendGroups) {
     ASSERT_NO_FATAL_FAILURE({
@@ -170,6 +266,13 @@ TEST_F(SocialNetworkTest, DetectFriendGroups) {
         });
 
     auto groups = network.detectFriendGroups();
+    ASSERT_FALSE(groups.empty());
+
+    bool triangleFound = false;
+    for (const auto& group : groups) {
+        if (find(group.begin(), group.end(), 1) != group.end() &&
+            find(group.begin(), group.end(), 2) != group.end() &&
+            find(group.begin(), group.end(), 3) != group.end()) {
     ASSERT_FALSE(groups.empty()) << "No friend groups detected";
 
     bool triangleFound = false;
@@ -182,6 +285,19 @@ TEST_F(SocialNetworkTest, DetectFriendGroups) {
             break;
         }
     }
+    EXPECT_TRUE(triangleFound);
+}
+
+/**
+ * @test Duplicate friendships should not result in multiple edges.
+ */
+TEST_F(SocialNetworkTest, AddDuplicateFriendship_Idempotent) {
+    ASSERT_NO_FATAL_FAILURE(network.addFriendship(1, 2));
+
+    EXPECT_NO_THROW({
+        network.addFriendship(1, 2);
+        network.addFriendship(2, 1);
+        });
 
     EXPECT_TRUE(triangleFound);
 }
@@ -204,6 +320,37 @@ TEST_F(SocialNetworkTest, AddDuplicateFriendship_Idempotent) {
         [](User* u) { return u->getId() == 2; });
     int countB = count_if(friends2.begin(), friends2.end(),
         [](User* u) { return u->getId() == 1; });
+
+    EXPECT_EQ(countA, 1);
+    EXPECT_EQ(countB, 1);
+}
+
+/**
+ * @test Friendship removal should be symmetric (both directions).
+ */
+TEST_F(SocialNetworkTest, RemoveExistingFriendship_BothDirectionsRemoved) {
+    ASSERT_NO_FATAL_FAILURE({
+        network.addFriendship(1, 2);
+        network.removeFriendship(1, 2);
+        });
+
+    EXPECT_TRUE(network.getFriendsOfUser(1).empty());
+    EXPECT_TRUE(network.getFriendsOfUser(2).empty());
+}
+
+/**
+ * @test Sending a valid message should create a message edge.
+ */
+TEST_F(SocialNetworkTest, SendMessage_ValidUsers_CreatesMessageEdge) {
+    ASSERT_NO_FATAL_FAILURE(network.addFriendship(1, 2));
+    EXPECT_NO_THROW(network.sendMessage(1, 2, "Hi Bob!"));
+}
+
+/**
+ * @test Adding a valid post should store it successfully.
+ */
+TEST_F(SocialNetworkTest, AddPost_ValidUser_StoredSuccessfully) {
+    EXPECT_NO_THROW(network.addPost(1, "Hello world!"));
 
     EXPECT_EQ(countA, 1) << "Friendship should not duplicate for user 1";
     EXPECT_EQ(countB, 1) << "Friendship should not duplicate for user 2";

@@ -1,11 +1,33 @@
+/**
+ * @file GraphAlgorithms.cpp
+ * @brief Implementation of graph algorithms for traversal and analysis.
+ * @details Provides definitions for graph operations such as BFS, Dijkstra,
+ * connectivity check, cycle detection, degree centrality computation, and
+ * triangle finding. Uses an adjacency list structure for efficient traversal.
+ *
+ * @see GraphAlgorithms
+ *
+ * @author
+ * Kristina Zakharchenko
+ * @date
+ * 04.11.2025
+ */
+
 #include "GraphAlgorithms.h"
 #include <algorithm>
 #include <limits>
-#include <set> 
+#include <set>
 #include <functional>
 
+ /**
+  * @brief Default constructor initializing an empty graph structure.
+  */
 GraphAlgorithms::GraphAlgorithms() {}
 
+/**
+ * @brief Builds the graph from a list of edges and creates an adjacency list.
+ * @param edges Vector of edge pairs (u, v).
+ */
 void GraphAlgorithms::buildGraph(const vector<pair<int, int>>& edges) {
     adjacencyList.clear();
     for (const auto& e : edges) {
@@ -17,6 +39,11 @@ void GraphAlgorithms::buildGraph(const vector<pair<int, int>>& edges) {
     }
 }
 
+/**
+ * @brief Performs Breadth-First Search (BFS) from a given starting vertex.
+ * @param start Starting vertex ID.
+ * @return Map of vertex IDs and their distances from the starting vertex.
+ */
 map<int, int> GraphAlgorithms::breadthFirstSearch(int start) {
     map<int, int> dist;
     if (!adjacencyList.count(start)) return dist;
@@ -37,11 +64,22 @@ map<int, int> GraphAlgorithms::breadthFirstSearch(int start) {
     return dist;
 }
 
+/**
+ * @brief Checks if the graph is connected using BFS.
+ * @param start Starting vertex ID.
+ * @param totalVertices Expected total number of vertices.
+ * @return True if the graph is connected, otherwise false.
+ */
 bool GraphAlgorithms::isConnected(int start, int totalVertices) {
     auto dist = breadthFirstSearch(start);
     return dist.size() == totalVertices;
 }
 
+/**
+ * @brief Executes Dijkstra’s algorithm to find the shortest path distances.
+ * @param start Starting vertex ID.
+ * @return Map of vertex IDs to shortest path distances.
+ */
 map<int, int> GraphAlgorithms::dijkstra(int start) {
     map<int, int> dist;
     for (const auto& kv : adjacencyList) {
@@ -68,6 +106,10 @@ map<int, int> GraphAlgorithms::dijkstra(int start) {
     return dist;
 }
 
+/**
+ * @brief Computes degree centrality for each vertex.
+ * @return Map of vertex IDs to degree centrality values.
+ */
 map<int, double> GraphAlgorithms::computeDegreeCentrality() {
     map<int, double> degree;
     for (const auto& kv : adjacencyList) {
@@ -76,6 +118,10 @@ map<int, double> GraphAlgorithms::computeDegreeCentrality() {
     return degree;
 }
 
+/**
+ * @brief Checks whether the graph contains a cycle.
+ * @return True if a cycle is detected, otherwise false.
+ */
 bool GraphAlgorithms::hasCycle() {
     set<int> visited;
     for (const auto& kv : adjacencyList) {
@@ -87,6 +133,13 @@ bool GraphAlgorithms::hasCycle() {
     return false;
 }
 
+/**
+ * @brief Utility function for DFS-based cycle detection.
+ * @param v Current vertex.
+ * @param parent Parent vertex in the DFS traversal.
+ * @param visited Set of visited vertices.
+ * @return True if a cycle is detected, otherwise false.
+ */
 bool GraphAlgorithms::hasCycleUtil(int v, int parent, set<int>& visited) {
     visited.insert(v);
     for (int u : adjacencyList[v]) {
@@ -100,6 +153,10 @@ bool GraphAlgorithms::hasCycleUtil(int v, int parent, set<int>& visited) {
     return false;
 }
 
+/**
+ * @brief Finds all triangles (three interconnected vertices) in the graph.
+ * @return Vector of triples representing triangles (u, v, w).
+ */
 vector<vector<int>> GraphAlgorithms::findTriangles() {
     vector<vector<int>> triangles;
     map<int, set<int>> adjSet;
@@ -122,6 +179,12 @@ vector<vector<int>> GraphAlgorithms::findTriangles() {
     return triangles;
 }
 
+/**
+ * @brief Checks if there is a path between two vertices using BFS.
+ * @param from Source vertex ID.
+ * @param to Target vertex ID.
+ * @return True if a path exists, otherwise false.
+ */
 bool GraphAlgorithms::hasPath(int from, int to) {
     if (!adjacencyList.count(from) || !adjacencyList.count(to)) return false;
     auto dist = breadthFirstSearch(from);
